@@ -30,6 +30,7 @@ export default function ExpertiseSection() {
               </h3>
   
               <ul className="space-y-4 text-xl">
+
                 {[
                   "Expertise in fire detection, alarm, and suppression.",
                   "Security solutions for critical infrastructure & organizations.",
@@ -43,6 +44,7 @@ export default function ExpertiseSection() {
                     <span>{item}</span>
                   </li>
                 ))}
+                
               </ul>
   
               <div className="flex flex-wrap gap-4 mt-8">
