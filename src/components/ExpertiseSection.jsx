@@ -55,7 +55,6 @@ export default function ExpertiseSection() {
                 </button>
               </div>
 
-              
             </div>
           </div>
         </div>
