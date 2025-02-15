@@ -61,3 +61,48 @@
   display: flex;
   animation: slide 15s linear infinite;
 }
+
+
+.carousel-3d-swiper {
+  width: 100%;
+  padding: 3rem 0 4rem;
+}
+
+.carousel-3d-swiper .swiper-slide {
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.carousel-3d-swiper .swiper-slide-active {
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.carousel-3d-swiper .swiper-slide-prev,
+.carousel-3d-swiper .swiper-slide-next {
+  transform: scale(0.9);
+  z-index: 1;
+}
+
+.carousel-3d-swiper .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+  opacity: 0.9;
+}
+
+.carousel-3d-swiper .swiper-pagination-bullet {
+  background: #666;
+  opacity: 1;
+}
+
+.carousel-3d-swiper .swiper-pagination-bullet-active {
+  background: #000;
+}
+
+.carousel-3d-swiper .swiper-button-prev,
+.carousel-3d-swiper .swiper-button-next {
+  color: #000;
+}
+
+.carousel-3d-swiper .swiper-button-prev:after,
+.carousel-3d-swiper .swiper-button-next:after {
+  font-size: 1.5rem;
+}

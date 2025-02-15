@@ -1,10 +1,10 @@
 
 const AboutGenesis = () => {
     return (
-        <div className="bg-white bg-[url('https://s3-alpha-sig.figma.com/img/c0d2/2edd/bcf3b50202d93c20fb2a7e5e668545f4?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bT~JclqejsToKu5D2Xy~QlfNNAdhNtofkGHgaP7p4uETqLjKlS7jalMb9pNLVwg9EErB6BpEjb73XUJb12tCgMjz3~f80deupnGZqLw~rvyACG3uyBxUwZ~ZXgiezs6wVA0sHgYH-eol7lCur4tUWxFTDzG9FaW1wpwO8wuK0QrTloVGRYo0zNy3VjRnDj33JVOItFQt3p4RYXMN09k2TLf6-2RHzPdSFB~9iGAipoD9cLb812VTCwigAYLkU8S9lYoFnKJKvuuFxjK~8DVSyVIu0tqnTJ9s2KzbJ-Ydr9l9X-ZyNaeTA7gMotZ~75-6QY9xv-xAp~7Kxk9VIQVnnA__')] bg-bottom bg-no-repeat bg-[length:100%_300px] mb-20 bg-gradient-to-t from-transparent to-[rgba(255, 255, 255, 0.8)]">
+        <div className="bg-white bg-[url('https://s3-alpha-sig.figma.com/img/c0d2/2edd/bcf3b50202d93c20fb2a7e5e668545f4?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bT~JclqejsToKu5D2Xy~QlfNNAdhNtofkGHgaP7p4uETqLjKlS7jalMb9pNLVwg9EErB6BpEjb73XUJb12tCgMjz3~f80deupnGZqLw~rvyACG3uyBxUwZ~ZXgiezs6wVA0sHgYH-eol7lCur4tUWxFTDzG9FaW1wpwO8wuK0QrTloVGRYo0zNy3VjRnDj33JVOItFQt3p4RYXMN09k2TLf6-2RHzPdSFB~9iGAipoD9cLb812VTCwigAYLkU8S9lYoFnKJKvuuFxjK~8DVSyVIu0tqnTJ9s2KzbJ-Ydr9l9X-ZyNaeTA7gMotZ~75-6QY9xv-xAp~7Kxk9VIQVnnA__')] bg-bottom bg-no-repeat bg-[length:100%_300px] mb-20 bg-gradient-to-b from-gray-50 via-transparent to-white">
+            <div className="bg-gradient-to-b from-gray-50 via-transparent to-white">
 
-
-            <div className="container mx-auto px-15 py-10">
+            <div className="container mx-auto px-15 py-10 ">
 
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -95,6 +95,7 @@ const AboutGenesis = () => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

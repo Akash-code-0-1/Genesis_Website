@@ -1,114 +1,120 @@
-import { useState } from 'react';
+"use client"
 
-const cardsData = [
-    {
-        title: "Now, now. Perfectly symmetrical violence never solved anything.",
-        text: "If we can hit that bullseye, the rest of the dominoes will fall like a house of cards.<br>Checkmate.",
-        linkText: "Blame the wizards!",
-    },
-    {
-        title: "No! The cat shelter's on to me.",
-        text: "I decline the title of Iron Cook and accept the lesser title of Zinc Saucier, which I just made up.<br>Uhh… also, comes with double prize money.",
-        linkText: "Good news everyone!",
-    },
-    {
-        title: "Acting Unit 0.8",
-        text: "You've killed me!<br>Oh, you've killed me!<br>File not found.",
-        linkText: "Goodbye, cruel lamp",
-    },
-    {
-        title: "Uh, is the puppy mechanical in any way?",
-        text: "I'm sorry, guys. I never meant to hurt you. Just to destroy everything you ever believed in.",
-        linkText: "Leela's gonna kill me",
-        // Add more data as needed...
-        // Example:
-        // {title:"Dr. Zoidberg...",text:"...",linkText:"..."}
+import { useEffect, useState } from "react"
+import Swiper from "swiper"
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/effect-coverflow"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
 
-    },
-    {
-        title: "Acting Unit 0.8",
-        text: "You've killed me!<br>Oh, you've killed me!<br>File not found.",
-        linkText: "Goodbye, cruel lamp",
-    },
-    {
-        title: "Acting Unit 0.8",
-        text: "You've killed me!<br>Oh, you've killed me!<br>File not found.",
-        linkText: "Goodbye, cruel lamp",
-    },
-    {
-        title: "Acting Unit 0.8",
-        text: "You've killed me!<br>Oh, you've killed me!<br>File not found.",
-        linkText: "Goodbye, cruel lamp",
-    },
-    {
-        title: "Dr. Zoidberg doesn't make sense.",
-        text: "And remember don't do anything that affects anything unless it turns out you were supposed to in which case for love God don't not do it",
-        linkText: 'I will destroy You'
-    },
-];
+const slides = [
+  {
+    image: "https://combatbrandfire.sg/cdn/shop/files/Ion-Battery-Extinguisher3.jpg?v=1705919635&width=1445",
+    title: "FIRE EXTINGUISHER",
+    subtitle: "provides advanced fire safety solutions to protect lives",
+  },
+  {
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzFuSwXPn_tCmeI6e9gUQrxnEVPoYJuguQmw&s",
+    title: "Lorem ipsum dolor",
+    subtitle: "Web Designer",
+  },
+  {
+    image: "https://combatbrandfire.sg/cdn/shop/files/Ion-Battery-Extinguisher3.jpg?v=1705919635&width=1445",
+    title: "Lorem ipsum dolor",
+    subtitle: "Web Designer",
+  },
+  {
+    image: "https://images.carriercms.com/image/upload/w_400,c_lfill,q_auto,f_auto/v1692049857/kidde/home-safety/product/kitchen-fire-extinguisher_4-3.jpg",
+    title: "Lorem ipsum dolor",
+    subtitle: "Web Designer",
+  },
+  {
+    image: "https://res.cloudinary.com/internachi/image/fetch/f_auto,q_auto:best/https://s3.amazonaws.com/uploads-east-1.nachi.org/gallery-images/general/internachi-fire-extinguisher-elements.jpg",
+    title: "Lorem ipsum dolor",
+    subtitle: "Web Designer",
+  },
+]
 
-function Carousel() {
+export default function Carousel3D() {
+  const [activeIndex, setActiveIndex] = useState(0)
 
-    const [activeIndex, setActiveIndex] = useState(0);
-    const size = cardsData.length;
+  useEffect(() => {
+    const swiper = new Swiper(".carousel-3d-swiper", {
+      modules: [EffectCoverflow, Navigation, Pagination],
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      loop: true,
+      loopedSlides: 5,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 20,
+        depth: 100,
+        modifier: 2.5,
+        slideShadows: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      on: {
+        slideChange: (swiper) => {
+          setActiveIndex(swiper.realIndex)
+        },
+      },
+    })
 
-    return (
-        <div className="relative mx-auto max-w-full h-[450px]">
-            {/* Buttons */}
-            <button
-                className="absolute top-[50%] left-[10px] bg-transparent border-none cursor-pointer p-[10px]"
-                onClick={() => setActiveIndex((prevIndex) => (prevIndex + size - 1) % size)}
-            >&lt;</button>
+    return () => {
+      swiper.destroy()
+    }
+  }, [])
 
-            {/* Inner carousel */}
-            <div className='flex justify-center'>
-                {cardsData.map((card, i) => {
-                    let angleOffset = 360 * size; // To avoid negative angles when rotating back.
-                    let currentAngle = (i - activeIndex) * 360 / size + angleOffset;
-
-                    return (
-                        // Each card rotates around its center point relative to its parent.
-                        // Adjust styles as needed for better appearance.
-                        <div key={i} style={{
-                            position: 'absolute',
-                            width: '220px',
-                            height: '300px',
-                            backgroundColor: '#fff',
-                            borderRadius: '10px',
-                            boxShadow: '5px black',
-                            transform: `translateX(-50%) rotateY(${currentAngle}deg)`
-                        }}>
-                            {/* Card content */}
-                            {(activeIndex === i) ? (
-                                <>
-                                    {/* Highlighted front card styles */}
-                                    <h4 className="text-lg font-bold">{card.title}</h4>
-                                    <p dangerouslySetInnerHTML={{ __html: card.text }} />
-                                    <a href="#" onClick={(e) => e.preventDefault()}>{card.linkText}</a>
-                                </>
-                            ) : (
-                                <>
-                                    {/* Other card styles */}
-                                    <h4 className="text-lg font-bold opacity-50">{card.title}</h4>
-                                    <p dangerouslySetInnerHTML={{ __html: card.text }} className="opacity-50" />
-                                </>
-
-                            )}
-                        </div>
-                    )
-                })}
-
+  return (
+    <div
+      className="relative py-16 bg-gray-100 bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('https://s3-alpha-sig.figma.com/img/48ba/ddd2/6192a45a78980c7968e0055690dcbb56?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=hDySyxajy8z2GEspEx9N42OfNKwOA4FxStWT5oj2V3KLqmzZw8Rov4LH5E52ftkpjVJPGwcZfvv9HJJoEp1L2SCap5qjO75ZzDDJbIv4AkDKt8oOd5wAxZfbu2tIFL3RwzNlx8GjBQPLpX3FVjrP8~sWht5ofEtNIbXMrp85D~UDDQEE7JRlcE3uBBt~QUEyx-eqzXb~bhYtQl6wQ7wWMhzaSDgGtRMSET8RCbkqUnrEimS6e8L1TG72cdIncpOdSMiF5~prt7e3K20qfie4al-D~~sw3OkPjQNkR53Zi-SCHKMy4L4YzymPM7lIAjLUJ62Ihs~~DdDJVyGZe3UsWA__')",
+      }}
+    >
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-transparent to-white"></div>
+        <div className="max-w-6xl mx-auto px-10 overflow-hidden">
+          <div className="carousel-3d-swiper">
+            <div className="swiper-wrapper">
+              {slides.map((slide, index) => (
+                <div key={index} className="swiper-slide">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 h-[500px] relative">
+                    <div className="aspect-[3/3] overflow-hidden h-full">
+                      <img
+                        className="w-full h-full object-cover"
+                        src={slide.image || "/placeholder.svg"}
+                        alt={`Slide ${index + 1}`}
+                      />
+                    </div>
+                    {activeIndex === index && (
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-center  text-white duration-300">
+                        <h3 className="text-xl font-bold mb-1">{slide.title}</h3>
+                        <p className="text-gray-300 uppercase text-md">{slide.subtitle}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
-
-            {/* Button Right*/}
-            <button
-                className="absolute top-[50%] right-[10px] bg-transparent border-none cursor-pointer p-[10px]"
-                onClick={() => setActiveIndex((prevIndex) => (prevIndex + 1) % size)}
-            >&gt;</button>
-
+            {/* <div className="swiper-button-prev !text-white"></div>
+          <div className="swiper-button-next !text-white"></div>
+          <div className="swiper-pagination !bottom-0 !-mb-12"></div> */}
+          </div>
         </div>
 
-    );
+    </div>
+  )
 }
 
-export default Carousel;

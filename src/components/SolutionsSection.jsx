@@ -1,47 +1,30 @@
 import { useState } from "react";
-import Carousel from "./Carousel";
+import CarouselFire from "./Carousel";
+import CarouselSafety from "./CarouselSafety";
+import CarouselSecurity from "./CarouselSecurity";
+
 const solutionsData = {
     Fire: {
         title: "FIRE EXTINGUISHER",
         description: "GTL provides advanced fire safety solutions to protect lives, property, and critical infrastructure. Our services include fire detection, alarm systems, and cutting-edge suppression technologies, ensuring comprehensive prevention, monitoring, and response. Catering to governments, embassies, power stations, and major organizations, we deliver reliable, customized systems that meet the highest safety standards.",
-        images: [
-            "/fire1.jpg",
-            "/fire2.jpg",
-            "/fire3.jpg",
-            "/fire4.jpg",
-            "/fire5.jpg"
-        ]
     },
     Safety: {
         title: "SAFETY SOLUTIONS",
-        description: "GTL provides advanced fire safety solutions to protect lives, property, and critical infrastructure. Our services include fire detection, alarm systems, and cutting-edge suppression technologies, ensuring comprehensive prevention, monitoring, and response. Catering to governments, embassies, power stations, and major organizations, we deliver reliable, customized systems that meet the highest safety standards.",
-        images: [
-            "/safety1.jpg",
-            "/safety2.jpg",
-            "/safety3.jpg",
-            "/safety4.jpg",
-            "/safety5.jpg"
-        ]
+        description: "GTL provides advanced fire safety solutions to protect lives, propertyring comprehensive prevention, monitoring, and response. Catering to governments, embassies, power stations, and major organizations, we deliver reliable, customized systems that meet the highest safety standards., and critical infrastructure. Our services include fire detection, alarm systems, and cutting-edge suppression technologies, ensu ",
+
     },
     Security: {
         title: "SECURITY SYSTEMS",
-        description: "GTL provides advanced fire safety solutions to protect lives, property, and critical infrastructure. Our services include fire detection, alarm systems, and cutting-edge suppression technologies, ensuring comprehensive prevention, monitoring, and response. Catering to governments, embassies, power stations, and major organizations, we deliver reliable, customized systems that meet the highest safety standards.",
-        images: [
-            "/security1.jpg",
-            "/security2.jpg",
-            "/security3.jpg",
-            "/security4.jpg",
-            "/security5.jpg"
-        ]
+        description: "GTL provides advanced fire safety solutions to protect lives, property, and critical infrastructure. Our services include fire detection, alarm systems, and cutting-edge suppression technologies, ensuring comprehensive prevention, monitoring, and response. Catering to governments, embassies, power stations, and major organizations, we deliver reliable, customized systems that meet the highest safetycture. Our services include fire detection, alarm systems, and cutting-edge suppression technologies, ensuring comprehensive prevention, monitoring, and response. Catering to governments, embassies, power stations, and major or standards.",
     }
 };
 
 export default function SolutionsSection() {
     const [activeTab, setActiveTab] = useState("Fire");
-    const { title, description, images } = solutionsData[activeTab];
+    const { title, description } = solutionsData[activeTab];
 
     return (
-        <div className="mx-auto px-4 py-12 text-center bg-[#F7F7F7]">
+        <div className="mx-auto  py-12 text-center bg-[#F7F7F7]">
             <h2 className="text-3xl md:text-4xl font-bold">
                 Our <span className="text-blue-500">Solutions</span>
             </h2>
@@ -52,7 +35,7 @@ export default function SolutionsSection() {
                     <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className={`px-6 py-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 ${activeTab === tab ? "bg-white shadow-md" : "text-gray-600 hover:bg-gray-300"}`}
+                        className={`px-6 md:px-15 py-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 ${activeTab === tab ? "bg-white shadow-md" : "text-gray-600 hover:bg-gray-300"}`}
                     >
                         {tab}
                     </button>
@@ -61,11 +44,12 @@ export default function SolutionsSection() {
 
             <p className="mt-6 text-gray-700 px-6 md:px-32">{solutionsData[activeTab].description}</p>
 
-            <div className="mt-8 flex justify-center flex-wrap gap-4">
-                {images.map((src, index) => (
-                    <Carousel />
-                ))}
+            <div className="mt-8">
+                {activeTab === "Fire" && <CarouselFire />}
+                {activeTab === "Safety" && <CarouselSafety />}
+                {activeTab === "Security" && <CarouselSecurity />}
             </div>
+
         </div>
     );
 }
