@@ -3,6 +3,7 @@ import Logo_Showcase from '../components/LogoShowcase';
 import AboutGenesis from '../components/AboutGenesis';
 import SolutionsSection from '../components/SolutionsSection';
 import ExpertiseSection from '../components/ExpertiseSection';
+import SpecializedSection from '../components/SpecializedSection';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <AboutGenesis />
       <SolutionsSection />
       <ExpertiseSection />
+      <SpecializedSection />
     </div>
   )
 }
