@@ -30,12 +30,7 @@ export default function SpecializedSection() {
                 <span className="text-sm xl:text-md">{item}</span>
             </div>
 
-
         );
-
-        
-
-
     };
 
 
