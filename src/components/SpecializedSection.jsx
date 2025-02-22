@@ -36,14 +36,14 @@ export default function SpecializedSection() {
 
     return (
         <section className="w-full py-16 bg-[#d1d0d0] lg:px-5 xl:px-20 bg-cover bg-center"
-        style={{
-            backgroundImage:
-              "url('https://s3-alpha-sig.figma.com/img/48ba/ddd2/6192a45a78980c7968e0055690dcbb56?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=hDySyxajy8z2GEspEx9N42OfNKwOA4FxStWT5oj2V3KLqmzZw8Rov4LH5E52ftkpjVJPGwcZfvv9HJJoEp1L2SCap5qjO75ZzDDJbIv4AkDKt8oOd5wAxZfbu2tIFL3RwzNlx8GjBQPLpX3FVjrP8~sWht5ofEtNIbXMrp85D~UDDQEE7JRlcE3uBBt~QUEyx-eqzXb~bhYtQl6wQ7wWMhzaSDgGtRMSET8RCbkqUnrEimS6e8L1TG72cdIncpOdSMiF5~prt7e3K20qfie4al-D~~sw3OkPjQNkR53Zi-SCHKMy4L4YzymPM7lIAjLUJ62Ihs~~DdDJVyGZe3UsWA__')",
-          }}
+            style={{
+                backgroundImage:
+                    "url('https://s3-alpha-sig.figma.com/img/48ba/ddd2/6192a45a78980c7968e0055690dcbb56?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=hDySyxajy8z2GEspEx9N42OfNKwOA4FxStWT5oj2V3KLqmzZw8Rov4LH5E52ftkpjVJPGwcZfvv9HJJoEp1L2SCap5qjO75ZzDDJbIv4AkDKt8oOd5wAxZfbu2tIFL3RwzNlx8GjBQPLpX3FVjrP8~sWht5ofEtNIbXMrp85D~UDDQEE7JRlcE3uBBt~QUEyx-eqzXb~bhYtQl6wQ7wWMhzaSDgGtRMSET8RCbkqUnrEimS6e8L1TG72cdIncpOdSMiF5~prt7e3K20qfie4al-D~~sw3OkPjQNkR53Zi-SCHKMy4L4YzymPM7lIAjLUJ62Ihs~~DdDJVyGZe3UsWA__')",
+            }}
         >
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
-                    <div className="w-15 h-[3px] bg-gradient-to-r from-[#06A9EF] to-[#74D5FF] relative top-3"/>
+                    <div className="w-15 h-[3px] bg-gradient-to-r from-[#06A9EF] to-[#74D5FF] relative top-3" />
                     We are <span className="text-[#40BFFD]">specialized</span> at
                 </h2>
 

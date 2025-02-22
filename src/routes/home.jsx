@@ -4,6 +4,7 @@ import AboutGenesis from '../components/AboutGenesis';
 import SolutionsSection from '../components/SolutionsSection';
 import ExpertiseSection from '../components/ExpertiseSection';
 import SpecializedSection from '../components/SpecializedSection';
+import ServiceDetails from '../components/ServiceDetails';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <SolutionsSection />
       <ExpertiseSection />
       <SpecializedSection />
+      <ServiceDetails />
     </div>
   )
 }
