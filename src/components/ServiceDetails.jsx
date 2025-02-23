@@ -142,21 +142,34 @@ export default function ServiceDetails() {
                 </div>
 
                 {/* Slider */}
-                <div className="flex items-center justify-center h-[550px] w-[100%]">
-                    <div className="flex space-x-3 justify-center  w-full max-w-4xl">
+                <div className="flex items-center justify-center h-[550px] w-full mt-10">
+                    <div className="flex space-x-3 justify-center w-full max-w-4xl">
                         {tabContent[activeTab].map((card) => (
                             <div
                                 key={card.id}
                                 onClick={() => setSelected(card.id)}
-                                className={`relative flex-shrink-0 h-[400px] rounded-2xl cursor-pointer shadow-lg transition-all duration-500 ease-in-out overflow-hidden ${selected === card.id ? "w-[65%] lg:w-[500px]" : "w-60"
-                                    }`}
+                                className={`relative flex-shrink-0 h-[410px] rounded-xl cursor-pointer shadow-lg transition-all duration-500 ease-in-out overflow-hidden ${selected === card.id ? "w-[65%] lg:w-[500px]" : "w-60"}`}
                                 style={{ backgroundImage: `url(${card.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
                             >
-                                <div className={`absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 transition-all duration-300 ease-in-out transform ${selected === card.id ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                                    }`}>
-                                    <h4 className="text-white uppercase text-lg">{card.title}</h4>
-                                    <p className="text-gray-300 text-sm">{card.description}</p>
-                                </div>
+                                {selected === card.id ? (
+                                    <div className="absolute inset-0 p-4 flex flex-col justify-end">
+                                        <h4 className="text-white uppercase text-lg font-bold">{card.title}</h4>
+                                        <p className="text-gray-300 text-sm mt-2">{card.description}</p>
+                                    </div>
+                                ) : (
+                                    <div className="absolute top-3 left-3 bg-white p-2 rounded-md text-black font-semibold text-sm">
+                                        {card.title}
+                                    </div>
+                                )}
+
+                                {selected !== card.id && (
+                                    <button
+                                        className="absolute bottom-3 left-2 bg-white p-2 px-3 rounded-xl"
+                                        onClick={() => setSelected(card.id)}
+                                    >
+                                        ➝
+                                    </button>
+                                )}
                             </div>
                         ))}
                     </div>
