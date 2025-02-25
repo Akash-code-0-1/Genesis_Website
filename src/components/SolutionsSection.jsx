@@ -24,7 +24,7 @@ export default function SolutionsSection() {
     const { title, description } = solutionsData[activeTab];
 
     return (
-        <div className="mx-auto  py-12 text-center bg-[#F7F7F7]">
+        <div className="mx-auto py-12 text-center bg-[#F7F7F7]">
             <h2 className="text-3xl md:text-4xl font-bold">
                 Our <span className="text-blue-500">Solutions</span>
             </h2>
