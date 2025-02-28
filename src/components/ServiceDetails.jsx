@@ -141,6 +141,8 @@ export default function ServiceDetails() {
                     ))}
                 </div>
 
+                
+
                 {/* Slider */}
                 <div className="flex items-center justify-center h-[550px] w-full mt-10">
                     <div className="flex space-x-3 justify-center w-full max-w-4xl">

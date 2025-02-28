@@ -1,5 +1,7 @@
 export default function SpecializedSection() {
     const fillOutItems = ["Shopping Malls", "Commercial Buildings", "Restaurants", "Retail Shops"]
+    
+    
     const maintenanceItems = [
         "Residential Building",
         "Commercial Buildings",
@@ -15,6 +17,8 @@ export default function SpecializedSection() {
         "Retails Shops",
         "Offices",
     ]
+
+    
     const projectItems = ["Warehouse", "Residential", "Commercial", "Retail Shops"]
 
     const renderItem = (item, index, isMiddleColumn = false) => {
