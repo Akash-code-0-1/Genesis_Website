@@ -5,6 +5,9 @@ import SolutionsSection from '../components/SolutionsSection';
 import ExpertiseSection from '../components/ExpertiseSection';
 import SpecializedSection from '../components/SpecializedSection';
 import ServiceDetails from '../components/ServiceDetails';
+import PartnersAwardsSection from '../components/partnersSection';
+import CaseStudy from '../components/CaseStudy';
+import Testimonial from '../components/Testimonial';
 
 const Home = () => {
   return (
@@ -15,7 +18,10 @@ const Home = () => {
       <SolutionsSection />
       <ExpertiseSection />
       <SpecializedSection />
-      {/* <ServiceDetails /> */}
+      <ServiceDetails />
+      <PartnersAwardsSection />
+      <CaseStudy />
+      <Testimonial />
     </div>
   )
 }
