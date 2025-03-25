@@ -3,9 +3,12 @@ import genesis_logo from '../assets/images/genesis_logo.png';
 import email from '../assets/icons/email.png';
 import telephone from '../assets/icons/telephone.png';
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { Link, useLocation } from "react-router-dom";
+
 
 
 const Navbar = () => {
+  const location = useLocation(); // Get current route
   console.log("Navbar component rendered");
 
   const [showSecondaryNavbar, setShowSecondaryNavbar] = useState(false);
@@ -197,8 +200,8 @@ const Navbar = () => {
               </div>
               <div className="text text-[15px]">
                 <span className="font-bold font-poppins">Call Us</span>
-                <p>+880 13445 00000</p>
-                <p>+880 13445 00000</p>
+                <p>+880 13445 72020</p>
+                <p>+880 13445 75205</p>
               </div>
             </div>
 
@@ -208,7 +211,7 @@ const Navbar = () => {
               </div>
               <div className="text text-[15px] font-poppins">
                 <span className="font-bold font-poppins">Drop Us an Email</span>
-                <p>demoemail@gmail.com</p>
+                <p>tanvirahmed@gmail.com</p>
               </div>
             </div>
           </div>
@@ -226,111 +229,109 @@ const Navbar = () => {
         {/* Main Navbar Links */}
         <div className="bg-white absolute xl:left-[18%]  2xl:left-[15%] top-[74%] shadow-[0px_2px_4px_0px_rgba(14,30,37,0.12),0px_2px_16px_0px_rgba(14,30,37,0.32)] rounded-md w-4/6 hidden xl:flex justify-between items-center h-[67px] mt-5 z-100">
           <ul className="flex pl-10 text-[18px] font-medium font-poppins xl:gap-8 2xl:gap-8">
-            <li className="relative text-blue-500">
-              Home
-              <span className="absolute left-0 bottom-[-19px] w-full h-[5px] bg-blue-500"></span>
-            </li>
+            {["Home", "About", "Services", "Our Work", "News", "Career"].map((item) => {
+              const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+              const isActive = location.pathname === path || (item === "Home" && location.pathname === "/");
 
-            {["Solution", "Services", "Our Work", "News", "Career"].map((item) => (
-              <li
-                key={item}
-                className="relative text-black group cursor-pointer"
-                onMouseEnter={() => {
-                  if (item === "Services") setIsServicesOpen(true);
-                  if (item === "Our Work") setIsProjectsOpen(true);
-                }}
-                onMouseLeave={() => {
-                  if (item === "Services") setIsServicesOpen(false);
-                  if (item === "Our Work") setIsProjectsOpen(false);
-                }}
-              >
-                <div className="flex items-center gap-1">
-                  {item}
-                  {(item === "Services" || item === "Our Work") && (
-                    <span>
-                      <RiArrowDropDownLine
-                        className={`size-8 transition-transform ${(item === "Services" && isServicesOpen) ||
-                          (item === "Our Work" && isProjectsOpen)
-                          ? "rotate-180"
-                          : ""
-                          }`}
-                      />
-                    </span>
+              return (
+                <li
+                  key={item}
+                  className={`relative group cursor-pointer ${isActive ? "text-blue-500" : "text-black"}`}
+                  onMouseEnter={() => {
+                    if (item === "Services") setIsServicesOpen(true);
+                    if (item === "Our Work") setIsProjectsOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    if (item === "Services") setIsServicesOpen(false);
+                    if (item === "Our Work") setIsProjectsOpen(false);
+                  }}
+                >
+                  {["About", "News", "Career"].includes(item) || item === "Home" ? (
+                    <Link to={path} className="flex items-center gap-1">
+                      {item}
+                    </Link>
+                  ) : (
+                    <div className="flex items-center gap-1">
+                      {item}
+                      {(item === "Services" || item === "Our Work") && (
+                        <span>
+                          <RiArrowDropDownLine
+                            className={`size-8 transition-transform ${(item === "Services" && isServicesOpen) || (item === "Our Work" && isProjectsOpen)
+                              ? "rotate-180"
+                              : ""
+                              }`}
+                          />
+                        </span>
+                      )}
+                    </div>
                   )}
-                </div>
 
-                <span className="absolute left-0 bottom-[-19px] w-0 h-[5px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  {/* Active Tab Underline */}
+                  <span
+                    className={`absolute left-0 bottom-[-19px] h-[5px] bg-blue-500 transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                  ></span>
 
-                {/* Dropdown for Services */}
-                {item === "Services" && isServicesOpen && (
-                  <ul className="absolute left-0 top-full mt-5 bg-white shadow-md rounded-lg w-[500px] p-4">
-                    {[
-                      "Fire Alarm System",
-                      "Fire Fighting System",
-                      "Fire Suppression",
-                      "Emergency Exit Light System",
-                      "Central Battery System",
-                      "Voice Evacuation & Fire Man Telephone System",
-                      "FM 200 System",
-                      "Kitchen Hood System",
-                      "Aerosol System",
-                      "Fire Hydrant System",
-                      "Fire Pump System",
-                      "Sprinkler System",
-                    ].map((service, index) => (
-                      <li
-                        key={index}
-                        className="py-2 px-4 flex items-center cursor-pointer group "
-                      >
-                        {/* Initially hidden, appears with animation on hover */}
-                        <div className="group-hover:inline-block transition-all duration-300 ease-in-out transform group-hover:translate-x-2">
-                          <span className="text-blue-500 hidden mr-2 hover:inline-block opacity-0 group-hover:opacity-100">
+                  {/* Dropdown for Services */}
+                  {item === "Services" && isServicesOpen && (
+                    <ul className="absolute left-0 top-full mt-5 bg-white shadow-md rounded-lg w-[500px] p-4">
+                      {[
+                        "Fire Alarm System",
+                        "Fire Fighting System",
+                        "Fire Suppression",
+                        "Emergency Exit Light System",
+                        "Central Battery System",
+                        "Voice Evacuation & Fire Man Telephone System",
+                        "FM 200 System",
+                        "Kitchen Hood System",
+                        "Aerosol System",
+                        "Fire Hydrant System",
+                        "Fire Pump System",
+                        "Sprinkler System",
+                      ].map((service, index) => (
+                        <li key={index} className="py-2 px-4 flex items-center cursor-pointer group">
+                          <div className="group-hover:inline-block transition-all duration-300 ease-in-out transform group-hover:translate-x-2">
+                            <span className="text-blue-500 hidden mr-2 hover:inline-block opacity-0 group-hover:opacity-100">
+                              ➜
+                            </span>
+                          </div>
+                          {service}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {/* Dropdown for Our Work */}
+                  {item === "Our Work" && isProjectsOpen && (
+                    <ul className="absolute left-0 top-full mt-5 bg-white shadow-lg rounded-lg w-[500px] p-4">
+                      {[
+                        "Dubai Cricket Stadium",
+                        "Onyx Tower",
+                        "Prism Tower",
+                        "Jumeirah Heights",
+                        "Jumeirah Golf Estate",
+                        "Al Andalus Towers",
+                        "Crystal Residence",
+                        "Astoria Residence",
+                        "Grandeur Residence",
+                        "Liwa Heights",
+                        "Majestic Tower",
+                        "Mikanaz Plaza",
+                        "Regal Tower",
+                        "S Hotel",
+                      ].map((project, index) => (
+                        <li key={index} className="py-2 px-4 flex items-center group cursor-pointer">
+                          <span className="text-blue-500 mr-2 opacity-0 hidden -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                             ➜
                           </span>
-                        </div>
-                        {service}
-                      </li>
-
-
-
-
-                    ))}
-                  </ul>
-                )}
-
-                {/* Dropdown for Our Work */}
-                {item === "Our Work" && isProjectsOpen && (
-                  <ul className="absolute left-0 top-full mt-5 bg-white shadow-lg rounded-lg w-[500px] p-4">
-                    {[
-                      "Dubai Cricket Stadium",
-                      "Onyx Tower",
-                      "Prism Tower",
-                      "Jumeirah Heights",
-                      "Jumeirah Golf Estate",
-                      "Al Andalus Towers",
-                      "Crystal Residence",
-                      "Astoria Residence",
-                      "Grandeur Residence",
-                      "Liwa Heights",
-                      "Majestic Tower",
-                      "Mikanaz Plaza",
-                      "Regal Tower",
-                      "S Hotel",
-                    ].map((project, index) => (
-                      <li
-                        key={index}
-                        className="py-2 px-4 flex items-center group cursor-pointer"
-                      >
-                        <span className="text-blue-500 mr-2 opacity-0 hidden -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                          ➜
-                        </span>
-                        {project}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+                          {project}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
           </ul>
 
           <button className="relative overflow-hidden bg-gradient-to-r from-blue-400 to-blue-600 text-white px-6 h-full xl:w-[250px] 2xl:w-[318px] py-5 rounded-md font-semibold hover:opacity-90 transition duration-300 group">

@@ -50,7 +50,7 @@ export default function CarouselSecurity() {
             loopedSlides: 5,
             coverflowEffect: {
                 rotate: 0,
-                stretch: 0,
+                stretch: 20,
                 depth: 100,
                 modifier: 2.5,
                 slideShadows: false,
@@ -76,36 +76,45 @@ export default function CarouselSecurity() {
     }, [])
 
     return (
-        <div className="bg-gray-100 py-16">
-            <div className="max-w-6xl mx-auto px-4">
-                <div className="carousel-3d-swiper">
-                    <div className="swiper-wrapper">
-                        {slides.map((slide, index) => (
-                            <div key={index} className="swiper-slide">
-                                <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 h-[500px] relative">
-                                    <div className="aspect-[4/3] overflow-hidden h-full">
-                                        <img
-                                            className="w-full h-full object-cover"
-                                            src={slide.image || "/placeholder.svg"}
-                                            alt={`Slide ${index + 1}`}
-                                        />
-                                    </div>
-                                    {activeIndex === index && (
-                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-center bg-black bg-opacity-50 text-white transition-opacity duration-300">
-                                            <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
-                                            <span className="text-red-400 font-medium">{slide.subtitle}</span>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
+        <div
+        className="relative py-16 bg-gray-100 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://s3-alpha-sig.figma.com/img/48ba/ddd2/6192a45a78980c7968e0055690dcbb56?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=hDySyxajy8z2GEspEx9N42OfNKwOA4FxStWT5oj2V3KLqmzZw8Rov4LH5E52ftkpjVJPGwcZfvv9HJJoEp1L2SCap5qjO75ZzDDJbIv4AkDKt8oOd5wAxZfbu2tIFL3RwzNlx8GjBQPLpX3FVjrP8~sWht5ofEtNIbXMrp85D~UDDQEE7JRlcE3uBBt~QUEyx-eqzXb~bhYtQl6wQ7wWMhzaSDgGtRMSET8RCbkqUnrEimS6e8L1TG72cdIncpOdSMiF5~prt7e3K20qfie4al-D~~sw3OkPjQNkR53Zi-SCHKMy4L4YzymPM7lIAjLUJ62Ihs~~DdDJVyGZe3UsWA__')",
+        }}
+      >
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-transparent to-white"></div>
+        <div className="max-w-6xl mx-auto px-10 overflow-hidden">
+          <div className="carousel-3d-swiper">
+            <div className="swiper-wrapper">
+              {slides.map((slide, index) => (
+                <div key={index} className="swiper-slide">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 h-[500px] relative">
+                    <div className="aspect-[3/3] overflow-hidden h-full">
+                      <img
+                        className="w-full h-full object-cover"
+                        src={slide.image || "/placeholder.svg"}
+                        alt={`Slide ${index + 1}`}
+                      />
                     </div>
-                    {/* <div className="swiper-button-prev !text-white"></div>
-          <div className="swiper-button-next !text-white"></div>
-          <div className="swiper-pagination !bottom-0 !-mb-12"></div> */}
+                    {activeIndex === index && (
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-center  text-white duration-300">
+                        <h3 className="text-xl font-bold mb-1">{slide.title}</h3>
+                        <p className="text-gray-300 uppercase text-md">{slide.subtitle}</p>
+                      </div>
+                    )}
+                  </div>
                 </div>
+              ))}
             </div>
+            {/* <div className="swiper-button-prev !text-white"></div>
+            <div className="swiper-button-next !text-white"></div>
+            <div className="swiper-pagination !bottom-0 !-mb-12"></div> */}
+          </div>
         </div>
+  
+      </div>
     )
 }
 

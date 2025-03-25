@@ -85,34 +85,34 @@ export default function Carousel3D() {
     >
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-transparent to-white"></div>
-        <div className="max-w-6xl mx-auto px-10 overflow-hidden">
-          <div className="carousel-3d-swiper">
-            <div className="swiper-wrapper">
-              {slides.map((slide, index) => (
-                <div key={index} className="swiper-slide">
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 h-[500px] relative">
-                    <div className="aspect-[3/3] overflow-hidden h-full">
-                      <img
-                        className="w-full h-full object-cover"
-                        src={slide.image || "/placeholder.svg"}
-                        alt={`Slide ${index + 1}`}
-                      />
-                    </div>
-                    {activeIndex === index && (
-                      <div className="absolute bottom-0 left-0 right-0 p-6 text-center  text-white duration-300">
-                        <h3 className="text-xl font-bold mb-1">{slide.title}</h3>
-                        <p className="text-gray-300 uppercase text-md">{slide.subtitle}</p>
-                      </div>
-                    )}
+      <div className="max-w-6xl mx-auto px-10 overflow-hidden">
+        <div className="carousel-3d-swiper">
+          <div className="swiper-wrapper">
+            {slides.map((slide, index) => (
+              <div key={index} className="swiper-slide">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 h-[500px] relative">
+                  <div className="aspect-[3/3] overflow-hidden h-full">
+                    <img
+                      className="w-full h-full object-cover"
+                      src={slide.image || "/placeholder.svg"}
+                      alt={`Slide ${index + 1}`}
+                    />
                   </div>
+                  {activeIndex === index && (
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-center  text-white duration-300">
+                      <h3 className="text-xl font-bold mb-1">{slide.title}</h3>
+                      <p className="text-gray-300 uppercase text-md">{slide.subtitle}</p>
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
-            {/* <div className="swiper-button-prev !text-white"></div>
+              </div>
+            ))}
+          </div>
+          {/* <div className="swiper-button-prev !text-white"></div>
           <div className="swiper-button-next !text-white"></div>
           <div className="swiper-pagination !bottom-0 !-mb-12"></div> */}
-          </div>
         </div>
+      </div>
 
     </div>
   )
