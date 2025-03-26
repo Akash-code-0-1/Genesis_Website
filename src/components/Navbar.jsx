@@ -276,59 +276,58 @@ const Navbar = () => {
                   {item === "Services" && isServicesOpen && (
                     <ul className="absolute left-0 top-full mt-5 bg-white shadow-md rounded-lg w-[500px] p-4">
                       {[
-                        "Fire Alarm System",
-                        "Fire Fighting System",
-                        "Fire Suppression",
-                        "Emergency Exit Light System",
-                        "Central Battery System",
-                        "Voice Evacuation & Fire Man Telephone System",
-                        "FM 200 System",
-                        "Kitchen Hood System",
-                        "Aerosol System",
-                        "Fire Hydrant System",
-                        "Fire Pump System",
-                        "Sprinkler System",
+                        { name: "Fire Alarm System", path: "/fire-alarm-system" },
+                        { name: "Fire Fighting System", path: "/fire-fighting-system" },
+                        { name: "Fire Suppression", path: "/fire-suppression" },
+                        { name: "Emergency Exit Light System", path: "/emergency-exit-light-system" },
+                        { name: "Central Battery System", path: "/central-battery-system" },
+                        { name: "Voice Evacuation & Fire Man Telephone System", path: "/voice-evacuation" },
+                        { name: "FM 200 System", path: "/fm-200-system" },
+                        { name: "Kitchen Hood System", path: "/kitchen-hood-system" },
+                        { name: "Aerosol System", path: "/aerosol-system" },
+                        { name: "Fire Hydrant System", path: "/fire-hydrant-system" },
+                        { name: "Fire Pump System", path: "/fire-pump-system" },
+                        { name: "Sprinkler System", path: "/sprinkler-system" },
                       ].map((service, index) => (
                         <li key={index} className="py-2 px-4 flex items-center cursor-pointer group">
-                          <div className="group-hover:inline-block transition-all duration-300 ease-in-out transform group-hover:translate-x-2">
-                            <span className="text-blue-500 hidden mr-2 hover:inline-block opacity-0 group-hover:opacity-100">
+                          <Link to={service.path} className="w-full">
+                            <span className="text-blue-500 hidden mr-2 group-hover:inline-block opacity-0 group-hover:opacity-100 transition-all duration-300">
                               ➜
                             </span>
-                          </div>
-                          {service}
+                            {service.name}
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   )}
 
-                  {/* Dropdown for Our Work */}
                   {item === "Our Work" && isProjectsOpen && (
                     <ul className="absolute left-0 top-full mt-5 bg-white shadow-lg rounded-lg w-[500px] p-4">
                       {[
-                        "Dubai Cricket Stadium",
-                        "Onyx Tower",
-                        "Prism Tower",
-                        "Jumeirah Heights",
-                        "Jumeirah Golf Estate",
-                        "Al Andalus Towers",
-                        "Crystal Residence",
-                        "Astoria Residence",
-                        "Grandeur Residence",
-                        "Liwa Heights",
-                        "Majestic Tower",
-                        "Mikanaz Plaza",
-                        "Regal Tower",
-                        "S Hotel",
+                        { name: "Dubai Cricket Stadium", path: "/our-work/dubai-cricket-stadium" },
+                        { name: "Onyx Tower", path: "/our-work/onyx-tower" },
+                        { name: "Prism Tower", path: "/prism-tower" },
+                        { name: "Jumeirah Heights", path: "/jumeirah-heights" },
+                        { name: "Jumeirah Golf Estate", path: "/our-work/jumeirah-golf-estate" },
+                        { name: "Al Andalus Towers", path: "/our-work/al-andalus-towers" },
+                        { name: "Crystal Residence", path: "/our-work/crystal-residence" },
+                        { name: "Astoria Residence", path: "/our-work/astoria-residence" },
+                        { name: "Grandeur Residence", path: "/our-work/grandeur-residence" },
+                        { name: "Liwa Heights", path: "/our-work/liwa-heights" },
+                        { name: "Majestic Tower", path: "/our-work/majestic-tower" },
+                        { name: "Mikanaz Plaza", path: "/our-work/mikanaz-plaza" },
+                        { name: "Regal Tower", path: "/our-work/regal-tower" },
+                        { name: "S Hotel", path: "/our-work/s-hotel" },
                       ].map((project, index) => (
                         <li key={index} className="py-2 px-4 flex items-center group cursor-pointer">
-                          <span className="text-blue-500 mr-2 opacity-0 hidden -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                            ➜
-                          </span>
-                          {project}
+                          <Link to={project.path} className="w-full">
+                            {project.name}
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   )}
+
                 </li>
               );
             })}

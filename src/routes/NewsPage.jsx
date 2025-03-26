@@ -281,11 +281,10 @@ const NewsPage = () => {
                 {categories.map((category) => (
                   <button
                     key={category.id}
-                    className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
-                      activeCategory === category.id
+                    className={`px-4 py-2 rounded-lg transition-colors duration-300 ${activeCategory === category.id
                         ? "bg-blue-500 text-white"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    }`}
+                      }`}
                     onClick={() => setActiveCategory(category.id)}
                   >
                     {category.name}
