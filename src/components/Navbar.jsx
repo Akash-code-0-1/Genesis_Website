@@ -58,7 +58,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="xl:flex hidden">
+            {/* <div className="xl:flex hidden">
               <ul className="flex text-[20px] font-medium font-poppins xl:gap-8 2xl:gap-28">
                 <li className="relative text-blue-500">
                   Home
@@ -70,6 +70,112 @@ const Navbar = () => {
                     <span className="absolute left-0 bottom-[-27px] w-0 h-[5px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                   </li>
                 ))}
+              </ul>
+            </div> */}
+            <div className="xl:flex hidden">
+              <ul className="flex pl-10 text-[18px] font-medium font-poppins xl:gap-8 2xl:gap-8">
+                {["Home", "About", "Services", "Our Work", "News", "Career"].map((item) => {
+                  const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+                  const isActive = location.pathname === path || (item === "Home" && location.pathname === "/");
+
+                  return (
+                    <li
+                      key={item}
+                      className={`relative group cursor-pointer ${isActive ? "text-blue-500" : "text-black"}`}
+                      onMouseEnter={() => {
+                        if (item === "Services") setIsServicesOpen(true);
+                        if (item === "Our Work") setIsProjectsOpen(true);
+                      }}
+                      onMouseLeave={() => {
+                        if (item === "Services") setIsServicesOpen(false);
+                        if (item === "Our Work") setIsProjectsOpen(false);
+                      }}
+                    >
+                      {["About", "News", "Career"].includes(item) || item === "Home" ? (
+                        <Link to={path} className="flex items-center gap-1">
+                          {item}
+                        </Link>
+                      ) : (
+                        <div className="flex items-center gap-1">
+                          {item}
+                          {(item === "Services" || item === "Our Work") && (
+                            <span>
+                              <RiArrowDropDownLine
+                                className={`size-8 transition-transform ${(item === "Services" && isServicesOpen) || (item === "Our Work" && isProjectsOpen)
+                                  ? "rotate-180"
+                                  : ""
+                                  }`}
+                              />
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Active Tab Underline */}
+                      <span
+                        className={`absolute left-0 bottom-[-19px] h-[5px] bg-blue-500 transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                          }`}
+                      ></span>
+
+                      {/* Dropdown for Services */}
+                      {item === "Services" && isServicesOpen && (
+                        <ul className="absolute left-0 top-full mt-5 bg-white shadow-md rounded-lg w-[500px] p-4">
+                          {[
+                            { name: "Fire Alarm System", path: "/fire-alarm-system" },
+                            { name: "Fire Fighting System", path: "/fire-fighting-system" },
+                            { name: "Fire Suppression", path: "/fire-suppression" },
+                            { name: "Emergency Exit Light System", path: "/emergency-exit-light-system" },
+                            { name: "Central Battery System", path: "/central-battery-system" },
+                            { name: "Voice Evacuation & Fire Man Telephone System", path: "/voice-evacuation" },
+                            { name: "FM 200 System", path: "/fm-200-system" },
+                            { name: "Kitchen Hood System", path: "/kitchen-hood-system" },
+                            { name: "Aerosol System", path: "/aerosol-system" },
+                            { name: "Fire Hydrant System", path: "/fire-hydrant-system" },
+                            { name: "Fire Pump System", path: "/fire-pump-system" },
+                            { name: "Sprinkler System", path: "/sprinkler-system" },
+                          ].map((service, index) => (
+                            <li key={index} className="py-2 px-4 flex items-center cursor-pointer group">
+                              <Link to={service.path} className="w-full">
+                                <span className="text-blue-500 hidden mr-2 group-hover:inline-block opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                  ➜
+                                </span>
+                                {service.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {item === "Our Work" && isProjectsOpen && (
+                        <ul className="absolute left-0 top-full mt-5 bg-white shadow-lg rounded-lg w-[500px] p-4">
+                          {[
+                            { name: "Dubai Cricket Stadium", path: "/dubai-cricket-stadium" },
+                            { name: "Onyx Tower", path: "/onyx-tower" },
+                            { name: "Prism Tower", path: "/prism-tower" },
+                            { name: "Jumeirah Heights", path: "/jumeirah-heights" },
+                            { name: "Jumeirah Golf Estate", path: "/jumeirah-golf-estate" },
+                            { name: "Al Andalus Towers", path: "/al-andalus-towers" },
+                            { name: "Crystal Residence", path: "/crystal-residence" },
+                            { name: "Astoria Residence", path: "/astoria-residence" },
+                            { name: "Grandeur Residence", path: "/grandeur-residence" },
+                            { name: "Liwa Heights", path: "/liwa-heights" },
+                            { name: "Majestic Tower", path: "/majestic-tower" },
+                            { name: "Mikanaz Plaza", path: "/mikanaz-plaza" },
+                            { name: "Regal Tower", path: "/regal-tower" },
+                            { name: "SHotel", path: "/s-hotel" },
+                          ].map((project, index) => (
+                            <li key={index} className="py-2 px-4 flex items-center group cursor-pointer">
+                              <Link to={project.path} className="w-full">
+                                {project.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 
@@ -98,75 +204,89 @@ const Navbar = () => {
           >
             {/* Sidebar Menu */}
             <ul className="flex flex-col text-[16px] font-medium">
-              <li className="py-4 text-blue-500 font-semibold border-b-[1px] border-gray-200">Home</li>
-              <li className="py-4 text-black border-b-[1px] border-gray-200">About Us</li>
+              <li className="py-4 text-blue-500 font-semibold border-b-[1px] border-gray-200">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="py-4 text-black border-b-[1px] border-gray-200">
+                <Link to="/about">About</Link>
+              </li>
 
               {/* Services with dropdown */}
               <li className="py-4 text-black flex justify-between items-center border-b-[1px] border-gray-200 cursor-pointer"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-              >
+                onClick={() => setIsServicesOpen(!isServicesOpen)}>
                 Services
                 <span>
                   <RiArrowDropDownLine className={`size-8 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
                 </span>
               </li>
-
-              {/* Dropdown Items */}
               {isServicesOpen && (
                 <ul className="bg-white">
-                  <li className="py-2 px-4 hover:bg-gray-100">Fire Alarm System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Fire Fighting System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Fire Suppression</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Emergency Exit Light System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Central Battery System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Voice Evacuation </li>
-                  <li className="py-2 px-4 hover:bg-gray-100">FM 200 System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Kitchen Hood System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Aerosol System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Fire Hydrant System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Fire Pump System</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Sprinkler System</li>
+                  {[
+                    { name: "Fire Alarm System", path: "/fire-alarm-system" },
+                    { name: "Fire Fighting System", path: "/fire-fighting-system" },
+                    { name: "Fire Suppression", path: "/fire-suppression" },
+                    { name: "Emergency Exit Light System", path: "/emergency-exit-light-system" },
+                    { name: "Central Battery System", path: "/central-battery-system" },
+                    { name: "Voice Evacuation", path: "/voice-evacuation" },
+                    { name: "FM 200 System", path: "/fm-200-system" },
+                    { name: "Kitchen Hood System", path: "/kitchen-hood-system" },
+                    { name: "Aerosol System", path: "/aerosol-system" },
+                    { name: "Fire Hydrant System", path: "/fire-hydrant-system" },
+                    { name: "Fire Pump System", path: "/fire-pump-system" },
+                    { name: "Sprinkler System", path: "/sprinkler-system" }
+                  ].map((service, index) => (
+                    <li key={index} className="py-2 px-4 hover:bg-gray-100">
+                      <Link to={service.path}>{service.name}</Link>
+                    </li>
+                  ))}
                 </ul>
               )}
 
-
-              <li className="py-4 text-black border-b-[1px] border-gray-200">Certificate</li>
+              <li className="py-4 text-black border-b-[1px] border-gray-200">
+                <Link to="/certificate">Certificate</Link>
+              </li>
 
               {/* Projects with dropdown */}
               <li className="py-4 text-black flex justify-between items-center border-b-[1px] border-gray-200 cursor-pointer"
-                onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-              >
-                Projects
+                onClick={() => setIsProjectsOpen(!isProjectsOpen)}>
+                Our Work
                 <span>
                   <RiArrowDropDownLine className={`size-8 transition-transform ${isProjectsOpen ? "rotate-180" : ""}`} />
                 </span>
               </li>
-
-              {/* Dropdown Items */}
               {isProjectsOpen && (
                 <ul className="bg-white">
-                  <li className="py-2 px-4 font-semibold text-black flex items-center"> Dubai Cricket Stadium</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Onyx Tower</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Prism Tower</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Jumeirah Heights</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Jumeirah Golf Estate</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Al Andalus Towers</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Crystal Residence</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Astoria Residence</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Grandeur Residence</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Liwa Heights</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Majestic Tower</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Mikanaz Plaza</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">Regal Tower</li>
-                  <li className="py-2 px-4 hover:bg-gray-100">S Hotel</li>
+                  {[
+                    { name: "Dubai Cricket Stadium", path: "/our-work/dubai-cricket-stadium" },
+                    { name: "Onyx Tower", path: "/our-work/onyx-tower" },
+                    { name: "Prism Tower", path: "/prism-tower" },
+                    { name: "Jumeirah Heights", path: "/jumeirah-heights" },
+                    { name: "Jumeirah Golf Estate", path: "/jumeirah-golf-estate" },
+                    { name: "Al Andalus Towers", path: "/al-andalus-towers" },
+                    { name: "Crystal Residence", path: "/crystal-residence" },
+                    { name: "Astoria Residence", path: "/astoria-residence" },
+                    { name: "Grandeur Residence", path: "/grandeur-residence" },
+                    { name: "Liwa Heights", path: "/liwa-heights" },
+                    { name: "Majestic Tower", path: "/majestic-tower" },
+                    { name: "Mikanaz Plaza", path: "/mikanaz-plaza" },
+                    { name: "Regal Tower", path: "/regal-tower" },
+                    { name: "SHotel", path: "/s-hotel" }
+                  ].map((project, index) => (
+                    <li key={index} className="py-2 px-4 hover:bg-gray-100">
+                      <Link to={project.path}>{project.name}</Link>
+                    </li>
+                  ))}
                 </ul>
               )}
 
-
-              <li className="py-4 text-black border-b-[1px] border-gray-200">Clients</li>
-              <li className="py-4 text-black border-b-[1px] border-gray-200">Careers</li>
-              <li className="py-4 text-black border-b-[1px] border-gray-200">Contact Us</li>
+              <li className="py-4 text-black border-b-[1px] border-gray-200">
+                <Link to="/news">News</Link>
+              </li>
+              <li className="py-4 text-black border-b-[1px] border-gray-200">
+                <Link to="/career">Careers</Link>
+              </li>
             </ul>
+
 
             {/* Support Button */}
             <div className="flex justify-center items-center">
@@ -304,20 +424,20 @@ const Navbar = () => {
                   {item === "Our Work" && isProjectsOpen && (
                     <ul className="absolute left-0 top-full mt-5 bg-white shadow-lg rounded-lg w-[500px] p-4">
                       {[
-                        { name: "Dubai Cricket Stadium", path: "/our-work/dubai-cricket-stadium" },
-                        { name: "Onyx Tower", path: "/our-work/onyx-tower" },
+                        { name: "Dubai Cricket Stadium", path: "/dubai-cricket-stadium" },
+                        { name: "Onyx Tower", path: "/onyx-tower" },
                         { name: "Prism Tower", path: "/prism-tower" },
                         { name: "Jumeirah Heights", path: "/jumeirah-heights" },
-                        { name: "Jumeirah Golf Estate", path: "/our-work/jumeirah-golf-estate" },
-                        { name: "Al Andalus Towers", path: "/our-work/al-andalus-towers" },
-                        { name: "Crystal Residence", path: "/our-work/crystal-residence" },
-                        { name: "Astoria Residence", path: "/our-work/astoria-residence" },
-                        { name: "Grandeur Residence", path: "/our-work/grandeur-residence" },
-                        { name: "Liwa Heights", path: "/our-work/liwa-heights" },
-                        { name: "Majestic Tower", path: "/our-work/majestic-tower" },
-                        { name: "Mikanaz Plaza", path: "/our-work/mikanaz-plaza" },
-                        { name: "Regal Tower", path: "/our-work/regal-tower" },
-                        { name: "S Hotel", path: "/our-work/s-hotel" },
+                        { name: "Jumeirah Golf Estate", path: "/jumeirah-golf-estate" },
+                        { name: "Al Andalus Towers", path: "/al-andalus-towers" },
+                        { name: "Crystal Residence", path: "/crystal-residence" },
+                        { name: "Astoria Residence", path: "/astoria-residence" },
+                        { name: "Grandeur Residence", path: "/grandeur-residence" },
+                        { name: "Liwa Heights", path: "/liwa-heights" },
+                        { name: "Majestic Tower", path: "/majestic-tower" },
+                        { name: "Mikanaz Plaza", path: "/mikanaz-plaza" },
+                        { name: "Regal Tower", path: "/regal-tower" },
+                        { name: "SHotel", path: "/s-hotel" },
                       ].map((project, index) => (
                         <li key={index} className="py-2 px-4 flex items-center group cursor-pointer">
                           <Link to={project.path} className="w-full">

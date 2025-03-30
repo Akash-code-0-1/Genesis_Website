@@ -1,7 +1,13 @@
-
+import fireImage from "../assets/images/fire.png";
+import sheild from "../assets/images/sheild.png";
+import security from "../assets/images/security.png";
+import wave from "../assets/images/wave.png";
 const AboutGenesis = () => {
     return (
-        <div className="bg-white bg-[url('https://s3-alpha-sig.figma.com/img/c0d2/2edd/bcf3b50202d93c20fb2a7e5e668545f4?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bT~JclqejsToKu5D2Xy~QlfNNAdhNtofkGHgaP7p4uETqLjKlS7jalMb9pNLVwg9EErB6BpEjb73XUJb12tCgMjz3~f80deupnGZqLw~rvyACG3uyBxUwZ~ZXgiezs6wVA0sHgYH-eol7lCur4tUWxFTDzG9FaW1wpwO8wuK0QrTloVGRYo0zNy3VjRnDj33JVOItFQt3p4RYXMN09k2TLf6-2RHzPdSFB~9iGAipoD9cLb812VTCwigAYLkU8S9lYoFnKJKvuuFxjK~8DVSyVIu0tqnTJ9s2KzbJ-Ydr9l9X-ZyNaeTA7gMotZ~75-6QY9xv-xAp~7Kxk9VIQVnnA__')] bg-bottom bg-no-repeat bg-[length:100%_300px] mb-20 bg-gradient-to-b from-gray-50 via-transparent to-white">
+        <div
+            className="bg-white bg-bottom bg-no-repeat bg-[length:100%_300px] mb-20 bg-gradient-to-b from-gray-50 via-transparent to-white"
+            style={{ backgroundImage: `url(${wave})` }}
+        >
             <div className="bg-gradient-to-b from-gray-50 via-transparent to-white">
 
                 <div className="container mx-auto px-15 py-10 ">
@@ -55,7 +61,7 @@ const AboutGenesis = () => {
                             <div className="relative flex flex-col items-center justify-center right-5">
                                 {/* Top - Fire */}
                                 <div className="flex flex-col items-center absolute top-[-75%] p-6 bg-gradient-to-b from-[#D9D9D9] to-[#aeaeae] border-[#C6C6C6] shadow-lg rounded-2xl z-100 border-1 ">
-                                    <img src="https://s3-alpha-sig.figma.com/img/cd69/b446/c2ce29ffa5e9bed13b899af8e519f551?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=IODpoJDG6FfeLEedLMNhH8N9He~dLoj8RGbFMOvLjKc2KnBtrYtrif-RJ0Oni7OLV7VhvUSeIa27biw~tBG5jXPbJQW~A7cQ8OtS9aN5vRm13Bm3jyCW~OXG9zJa5o2T9Rq7A1AwTaBOX9neKwMdkUGwUBq0mBzKFLNM3IHUhe7SLW6u832bxyRs29HDSaQ84PcyrbjAUBB6zceDrzbeoSRbNvPLIRomKOJ1fogbONJwc4tEoxSs4zU8WpAOl4~40wM-INvTwpBbUvR8uqxCJ3PXkVmfMDFHJbBlkSpYT1~jIAlbS8SJlTAwJSwmkwnQ7xz3mZiT-uVQGf2xV6EDgg__" alt="" className="size-15 object-cover" />
+                                    <img src={fireImage} alt="" className="size-15 object-cover" />
                                     <span className="font-semibold mt-2">Fire</span>
                                 </div>
 
@@ -82,13 +88,13 @@ const AboutGenesis = () => {
                                 <div className="flex gap-28 md:gap-40 absolute top-[70%] justify-center items-center">
                                     {/* Safety */}
                                     <div className="flex flex-col items-center p-6 ml-2 bg-gradient-to-b from-[#D9D9D9] to-[#aeaeae] border-[#C6C6C6] shadow-lg rounded-2xl">
-                                        <img src="https://s3-alpha-sig.figma.com/img/68be/0d47/4c7c33dbda751a11a938a7bb9bfa0167?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=CSM-GxKSZmj5vaAG04rhCOGBPBP7Z4sLPmLk2MSdNTcHCiXtonjtBdIo7M13jVeG~9M-So~nEh1G2Tf8pLJ-a~rt-Y-7GugbVCeBQsut49Tu9PEOri3XE5-d12olqOZM4EUtDAWszFod2gjX85w4HawRUH2UkmCmb~W2UMqPD1ZSVHi6yrTBXcr5u8gAcaz6Q8axPFDwbfk6bNGTPTTQpZ7PyjLiVh6ZQ0jFsjKDZJXEYwi59osOukxWrKad8lBh4hNlcc12JsdQyQ6jGopmdHAdRuCUlz2x9-MTYogvcb7H~32rxlcsSk-NDCYxgNUllq1H96-EjbwJHN2ed7iExw__" alt="" />
+                                        <img src={sheild} alt="" />
                                         <span className="font-semibold mt-2">Safety</span>
                                     </div>
 
                                     {/* Security */}
                                     <div className="flex flex-col items-center p-6 bg-gradient-to-b from-[#D9D9D9] to-[#aeaeae] border-[#C6C6C6]shadow-lg rounded-2xl">
-                                        <img src="https://s3-alpha-sig.figma.com/img/09d9/5df7/0fa4c10ab075959324e588bdb6888802?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=hcFZ2hb0yoSpZSGuSHU1tFGpE0f2AHRtAhZSzF3G6GxKn0Q4TiXj-2c5CTDZCun6l-FR0LODMB1jqkgAU3M6lk7BtigEwjKOpMVwFYhS3tDIjriCdjOzsp3TOQi5kbTvR61BW0uI2kKnZGmiFTPXpVRxIQHcSvaCBrHl0RK1ga7m4kTDpCX7lR9Mg2GIzuaZXY6DIc2vOb7o7iHVzgm2F3~vGiL0HHjidNzgYDDExRoCfoQqlBi-Cvy9mzdt2TNn5jbhBCnjfT35UUclgN738MXnVxQzAJrn0S74gUcu3lpn6I2b5Rz~k5zK62Mg1c6mP6IlMAlIxUKC38Pyp-8oqA__" alt="" />
+                                        <img src={security} alt="" />
                                         <span className="font-semibold mt-2">Security</span>
                                     </div>
                                 </div>

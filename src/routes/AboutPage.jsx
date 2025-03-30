@@ -49,7 +49,10 @@ const AboutPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Header */}
-      <header className="w-full h-[250px] bg-blue-700 py-4 px-6 shadow-lg flex items-center justify-center ">
+      <header
+        className="w-full h-[250px] bg-blue-700 py-4 px-6 shadow-lg flex items-center justify-center bg-center bg-cover"
+        style={{ backgroundImage: `url(https://images.pexels.com/photos/18299007/pexels-photo-18299007/free-photo-of-silhouette-of-a-fireman-with-a-fire-behind-his-back.jpeg?auto=compress&cs=tinysrgb&w=600)` }}
+      >
         <h1 className="text-white text-3xl font-bold text-center">About us</h1>
       </header>
 
@@ -112,7 +115,7 @@ const AboutPage = () => {
               >
                 <div className="p-3 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                   <img
-                    src="/placeholder.svg?height=50&width=50"
+                    src="https://static.vecteezy.com/system/resources/previews/022/474/753/non_2x/award-certificate-template-luxury-green-color-gradation-with-gold-lines-line-pattern-blank-award-design-illustration-vector.jpg"
                     width={50}
                     height={50}
                     alt="Certification 1"
@@ -121,7 +124,7 @@ const AboutPage = () => {
                 </div>
                 <div className="p-3 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                   <img
-                    src="/placeholder.svg?height=50&width=50"
+                    src="https://raketcontent.com/Conduct_Award_Certificate_1899137e7e.jpg"
                     width={50}
                     height={50}
                     alt="Certification 2"
@@ -130,7 +133,7 @@ const AboutPage = () => {
                 </div>
                 <div className="p-3 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                   <img
-                    src="/placeholder.svg?height=50&width=50"
+                    src="https://awardco.my.site.com/Customerhelp/servlet/rtaImage?eid=ka06S000001MjCT&feoid=00N6S00000LU5XL&refid=0EM6S000009yEp6"
                     width={50}
                     height={50}
                     alt="Certification 3"
@@ -139,7 +142,7 @@ const AboutPage = () => {
                 </div>
                 <div className="p-3 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                   <img
-                    src="/placeholder.svg?height=50&width=50"
+                    src="https://www.printpapa.com/eshop/pc/catalog/awardcertificate_01_947_detail.jpg"
                     width={50}
                     height={50}
                     alt="Certification 4"
@@ -207,7 +210,7 @@ const AboutPage = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <img
-                  src="/placeholder.svg?height=400&width=300"
+                  src="https://images.pexels.com/photos/14824431/pexels-photo-14824431.jpeg?auto=compress&cs=tinysrgb&w=600"
                   width={300}
                   height={400}
                   alt="Fire Extinguisher"

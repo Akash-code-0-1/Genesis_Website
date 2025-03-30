@@ -44,7 +44,7 @@ const FireAlarmSystem = () => {
       >
         <div className="relative h-64 md:h-80">
           <img
-            src="/placeholder.svg?height=400&width=800"
+            src="https://images.pexels.com/photos/13060858/pexels-photo-13060858.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="Fire Alarm System"
             className="w-full h-full object-cover"
           />
@@ -292,28 +292,28 @@ const FireAlarmSystem = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <motion.div className="rounded-lg overflow-hidden h-40 md:h-48" whileHover={{ scale: 1.05 }}>
             <img
-              src="/placeholder.svg?height=200&width=300"
+              src="https://www.bengalss.com/wp-content/uploads/2018/07/addressable-fire-alarm-control-panel-500x500.jpg"
               alt="Fire Alarm Panel"
               className="w-full h-full object-cover"
             />
           </motion.div>
           <motion.div className="rounded-lg overflow-hidden h-40 md:h-48" whileHover={{ scale: 1.05 }}>
             <img
-              src="/placeholder.svg?height=200&width=300"
+              src="https://d10lvax23vl53t.cloudfront.net/images/Article_Images/ImageForArticle_19_45609895834988439402.jpg"
               alt="Smoke Detector"
               className="w-full h-full object-cover"
             />
           </motion.div>
           <motion.div className="rounded-lg overflow-hidden h-40 md:h-48" whileHover={{ scale: 1.05 }}>
             <img
-              src="/placeholder.svg?height=200&width=300"
+              src="https://enalltha.sirv.com/WP_www.evacuatoralarms.com/2021/05/mcp-uk-2.jpg"
               alt="Manual Call Point"
               className="w-full h-full object-cover"
             />
           </motion.div>
           <motion.div className="rounded-lg overflow-hidden h-40 md:h-48" whileHover={{ scale: 1.05 }}>
             <img
-              src="/placeholder.svg?height=200&width=300"
+              src="https://lgmproducts.com/wp-content/uploads/2023/07/2-21-205_MA2H-R.png"
               alt="Alarm Sounder"
               className="w-full h-full object-cover"
             />

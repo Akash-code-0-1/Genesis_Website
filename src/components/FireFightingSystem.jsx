@@ -44,7 +44,7 @@ const FireFightingSystem = () => {
       >
         <div className="relative h-64 md:h-80">
           <img
-            src="/placeholder.svg?height=400&width=800"
+            src="https://fuller-eg.com/wp-content/uploads/2021/03/conreoltap-fire-system-5-scaled-1-2000x1125.jpg"
             alt="Fire Fighting System"
             className="w-full h-full object-cover"
           />

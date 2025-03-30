@@ -578,7 +578,7 @@ const CentralBatterySystem = () => {
             whileHover={{ y: -5, boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.2)" }}
           >
             <img
-              src="/placeholder.svg?height=300&width=500"
+              src="https://mlazgc8qzi72.i.optimole.com/w:1280/h:853/q:mauto/ig:avif/https://national-claims.co.uk/wp-content/uploads/2023/06/high-rise.png.jpg"
               alt="High-rise building"
               className="w-full h-48 object-cover"
             />
@@ -596,7 +596,7 @@ const CentralBatterySystem = () => {
             className="bg-blue-600 rounded-xl overflow-hidden relative text-white"
             whileHover={{ y: -5, boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.2)" }}
           >
-            <img src="/placeholder.svg?height=300&width=500" alt="Hospital" className="w-full h-48 object-cover" />
+            <img src="https://www.tagmedstaffing.com/wp-content/uploads/2023/12/shutterstock_786971899-scaled.jpg" alt="Hospital" className="w-full h-48 object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70"></div>
             <div className="p-5 relative z-10">
               <h3 className="font-bold text-lg mb-2">Healthcare Facilities</h3>
@@ -611,7 +611,7 @@ const CentralBatterySystem = () => {
             className="bg-blue-600 rounded-xl overflow-hidden relative text-white"
             whileHover={{ y: -5, boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.2)" }}
           >
-            <img src="/placeholder.svg?height=300&width=500" alt="Shopping mall" className="w-full h-48 object-cover" />
+            <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/VBDE62F2RZLFPPDJDJM7NNVW3Y.jpg" alt="Shopping mall" className="w-full h-48 object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70"></div>
             <div className="p-5 relative z-10">
               <h3 className="font-bold text-lg mb-2">Commercial Complexes</h3>

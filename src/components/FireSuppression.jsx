@@ -35,7 +35,7 @@ const FireSuppression = () => {
       >
         <div className="relative h-64 md:h-80">
           <img
-            src="/placeholder.svg?height=400&width=800"
+            src="https://aito.com.my/wp-content/uploads/2021/09/FM200-fire-suppression-data-center.jpg"
             alt="Fire Suppression System"
             className="w-full h-full object-cover"
           />

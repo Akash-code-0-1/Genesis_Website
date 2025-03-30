@@ -1,397 +1,294 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
-import { ArrowLeft, MapPin, Calendar, Building, Shield, Zap, Droplets, Flame, Check } from "lucide-react"
+import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+import { Calendar, MapPin, CheckCircle, ArrowRight, Home, Users, Droplet } from "lucide-react"
 
 const JumeirahHeights = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const sliderRef = useRef(null)
-
-  const slides = [
-    {
-      image: "/placeholder.svg?height=800&width=1200&text=Jumeirah Heights Overview",
-      title: "Jumeirah Heights",
-      description: "Comprehensive fire safety for luxury residential community",
-    },
-    {
-      image: "/placeholder.svg?height=800&width=1200&text=Fire Alarm Systems",
-      title: "Advanced Detection",
-      description: "State-of-the-art fire detection throughout the community",
-    },
-    {
-      image: "/placeholder.svg?height=800&width=1200&text=Sprinkler Systems",
-      title: "Water Protection",
-      description: "Comprehensive sprinkler coverage for all residential units",
-    },
-  ]
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
+    setIsVisible(true)
+  }, [])
 
-    window.addEventListener("scroll", handleScroll)
-
-    // Auto-advance slider
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-      clearInterval(interval)
-    }
-  }, [slides.length])
-
-  useEffect(() => {
-    if (sliderRef.current) {
-      sliderRef.current.style.transform = `translateX(-${currentSlide * 100}%)`
-    }
-  }, [currentSlide])
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index)
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   }
 
+  const projectDetails = {
+    client: "Jumeirah Properties",
+    location: "Jumeirah, Dubai, UAE",
+    completed: "2022",
+    units: "320 luxury residential units",
+    scope: "Comprehensive fire protection systems for residential complex",
+  }
+
+  const keyFeatures = [
+    "Addressable fire alarm system with apartment-specific detection",
+    "Residential sprinkler system designed to NFPA 13R standards",
+    "Emergency voice evacuation system with phased evacuation capability",
+    "Fire pump system with backup power generation",
+    "Smoke control systems for common areas and corridors",
+    "Firefighter access points and equipment throughout the complex",
+  ]
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav
-        className={`py-4 px-6 sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      {/* Hero Section with Wave Animation */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative h-[70vh] overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link
-            to="/"
-            className={`text-2xl font-bold transition-colors ${isScrolled ? "text-green-600" : "text-white"}`}
-          >
-            Eurofire
-          </Link>
-          <Link
-            to="/our-work"
-            className={`flex items-center transition-colors ${isScrolled ? "text-gray-700 hover:text-green-600" : "text-white hover:text-green-200"}`}
-          >
-            <ArrowLeft className="mr-2" size={20} />
-            <span>Back to Projects</span>
-          </Link>
-        </div>
-      </nav>
-
-      {/* Hero Slider */}
-      <div className="relative h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-600 opacity-80"></div>
         <div
-          ref={sliderRef}
-          className="flex transition-transform duration-700 ease-in-out h-full"
-          style={{ width: `${slides.length * 100}%` }}
-        >
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="relative w-full h-full bg-cover bg-center"
-              style={{ width: `${100 / slides.length}%` }}
-            >
-              <div className="absolute inset-0 bg-black opacity-40"></div>
-              <img
-                src={slide.image || "/placeholder.svg"}
-                alt={slide.title}
-                className="absolute w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center px-4">
-                  <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">{slide.title}</h1>
-                  <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">{slide.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/placeholder.svg?height=800&width=1200&text=Jumeirah+Heights')" }}
+        ></div>
 
-        {/* Slider Navigation */}
-        <div className="absolute bottom-10 left-0 right-0 flex justify-center space-x-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentSlide === index ? "bg-green-500 w-10" : "bg-white bg-opacity-50 hover:bg-opacity-100"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
+        {/* Wave animation */}
+        <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <motion.path
+            fill="rgba(255, 255, 255, 0.2)"
+            d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,154.7C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            animate={{
+              d: [
+                "M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,154.7C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z",
+                "M0,160L48,149.3C96,139,192,117,288,128C384,139,480,181,576,197.3C672,213,768,203,864,181.3C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z",
+                "M0,224L48,213.3C96,203,192,181,288,154.7C384,128,480,96,576,106.7C672,117,768,171,864,176C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z",
+              ],
+            }}
+            transition={{
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+              duration: 10,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.path
+            fill="rgba(255, 255, 255, 0.3)"
+            d="M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,186.7C672,192,768,192,864,170.7C960,149,1056,107,1152,101.3C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            animate={{
+              d: [
+                "M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,186.7C672,192,768,192,864,170.7C960,149,1056,107,1152,101.3C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z",
+                "M0,224L48,229.3C96,235,192,245,288,234.7C384,224,480,192,576,181.3C672,171,768,181,864,197.3C960,213,1056,235,1152,229.3C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z",
+                "M0,288L48,272C96,256,192,224,288,213.3C384,203,480,213,576,229.3C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z",
+              ],
+            }}
+            transition={{
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+              duration: 8,
+              ease: "easeInOut",
+            }}
+          />
+        </svg>
 
-      {/* Project Info */}
-      <div className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition-transform">
-              <MapPin className="text-green-600 mb-4" size={32} />
-              <h3 className="text-sm font-semibold text-gray-500 mb-1">LOCATION</h3>
-              <p className="text-xl font-medium text-gray-800">Jumeirah, Dubai, UAE</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition-transform">
-              <Calendar className="text-green-600 mb-4" size={32} />
-              <h3 className="text-sm font-semibold text-gray-500 mb-1">COMPLETION DATE</h3>
-              <p className="text-xl font-medium text-gray-800">April 2021</p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition-transform">
-              <Building className="text-green-600 mb-4" size={32} />
-              <h3 className="text-sm font-semibold text-gray-500 mb-1">CLIENT</h3>
-              <p className="text-xl font-medium text-gray-800">Jumeirah Properties</p>
-            </div>
-          </div>
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-4 z-10">
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold text-center">Jumeirah Heights</h1>
+          </motion.div>
+
+          <motion.p
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-2xl text-center max-w-3xl mt-4"
+          >
+            Premium fire protection for luxury residential living
+          </motion.p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Project Overview */}
-      <div className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="animate-fade-in">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Project Overview</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Jumeirah Heights is an exclusive residential community featuring luxury villas and apartment complexes
-                spread across a sprawling landscape. Eurofire was entrusted with designing and implementing
-                comprehensive fire safety systems throughout this prestigious development.
-              </p>
-              <p className="text-lg text-gray-600">
-                Our scope encompassed multiple residential buildings, common areas, and infrastructure, requiring a
-                holistic approach to fire safety that balanced protection with the aesthetic requirements of this
-                high-end community. The project demanded solutions that would integrate seamlessly with the luxurious
-                environment while providing state-of-the-art safety features.
-              </p>
+      <div className="container mx-auto py-16 px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Project Details */}
+          <motion.div
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+            variants={fadeIn}
+            className="lg:col-span-1"
+          >
+            <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
+              <h2 className="text-2xl font-bold text-blue-800 mb-6">Project Details</h2>
+
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <Home className="w-5 h-5 text-blue-500 mt-1 mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-500">Client</p>
+                    <p className="font-medium text-gray-800">{projectDetails.client}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <MapPin className="w-5 h-5 text-blue-500 mt-1 mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-500">Location</p>
+                    <p className="font-medium text-gray-800">{projectDetails.location}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Calendar className="w-5 h-5 text-blue-500 mt-1 mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-500">Completed</p>
+                    <p className="font-medium text-gray-800">{projectDetails.completed}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Users className="w-5 h-5 text-blue-500 mt-1 mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-500">Project Size</p>
+                    <p className="font-medium text-gray-800">{projectDetails.units}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-blue-500 mt-1 mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-500">Scope of Work</p>
+                    <p className="font-medium text-gray-800">{projectDetails.scope}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300 w-full flex items-center justify-center">
+                  Download Case Study
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </button>
+              </div>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl animate-fade-in-delay">
+          </motion.div>
+
+          {/* Project Content */}
+          <motion.div
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+            variants={fadeIn}
+            className="lg:col-span-2"
+          >
+            <h2 className="text-3xl font-bold text-blue-800 mb-6">Project Overview</h2>
+
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              Jumeirah Heights represents the pinnacle of luxury residential living in Dubai, comprising multiple
+              residential buildings with premium apartments and penthouses. Our team was commissioned to design and
+              implement comprehensive fire protection systems that would ensure the safety of residents while
+              maintaining the aesthetic standards expected in high-end properties.
+            </p>
+
+            <p className="text-gray-700 mb-8 leading-relaxed">
+              Residential fire protection presents unique challenges, requiring systems that provide robust protection
+              while remaining unobtrusive in living spaces. Our approach balanced technical excellence with design
+              sensitivity, creating solutions that integrate seamlessly with the luxurious environment while providing
+              world-class fire safety.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               <img
-                src="/placeholder.svg?height=800&width=1200&text=Jumeirah Heights Aerial View"
-                alt="Jumeirah Heights"
-                className="w-full h-auto"
+                src="/placeholder.svg?height=300&width=200&text=Residential+Complex"
+                alt="Residential Complex"
+                className="rounded-lg shadow-md h-64 object-cover w-full"
+              />
+              <img
+                src="/placeholder.svg?height=300&width=200&text=Interior+Systems"
+                alt="Interior Systems"
+                className="rounded-lg shadow-md h-64 object-cover w-full"
+              />
+              <img
+                src="/placeholder.svg?height=300&width=200&text=Control+Room"
+                alt="Control Room"
+                className="rounded-lg shadow-md h-64 object-cover w-full"
               />
             </div>
-          </div>
 
-          {/* Key Features */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-600 transform hover:scale-105 transition-transform">
-                <Shield className="text-green-600 mb-4" size={36} />
-                <h3 className="text-xl font-bold text-gray-800 mb-3">Community-Wide Coverage</h3>
-                <p className="text-gray-600">
-                  Integrated fire safety systems spanning all residential units and common areas
+            <h3 className="text-2xl font-bold text-blue-800 mb-4">Key Features</h3>
+
+            <div className="bg-blue-50 rounded-xl p-6 mb-8">
+              <ul className="space-y-3">
+                {keyFeatures.map((feature, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * index, duration: 0.5 }}
+                    className="flex items-start"
+                  >
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 mr-3 flex-shrink-0" />
+                    <span className="text-gray-700">{feature}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            <h3 className="text-2xl font-bold text-blue-800 mb-4">Residential Fire Safety Approach</h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-white rounded-lg shadow-md p-5 border-l-4 border-blue-500">
+                <h4 className="font-bold text-gray-800 mb-2">Concealed Protection</h4>
+                <p className="text-gray-700">
+                  We utilized concealed sprinklers and flush-mounted detection devices throughout residential units,
+                  ensuring effective protection while maintaining the luxury aesthetic of the interiors.
                 </p>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-600 transform hover:scale-105 transition-transform">
-                <Zap className="text-green-600 mb-4" size={36} />
-                <h3 className="text-xl font-bold text-gray-800 mb-3">Smart Home Integration</h3>
-                <p className="text-gray-600">
-                  Fire detection systems that integrate with smart home technology for enhanced safety
+
+              <div className="bg-white rounded-lg shadow-md p-5 border-l-4 border-blue-500">
+                <h4 className="font-bold text-gray-800 mb-2">Zoned Approach</h4>
+                <p className="text-gray-700">
+                  The fire alarm and evacuation systems were designed with a zoned approach, allowing for targeted
+                  responses to fire events and minimizing disruption to unaffected areas during incidents or testing.
                 </p>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-600 transform hover:scale-105 transition-transform">
-                <Flame className="text-green-600 mb-4" size={36} />
-                <h3 className="text-xl font-bold text-gray-800 mb-3">Discreet Protection</h3>
-                <p className="text-gray-600">Concealed sprinklers and detectors that maintain the luxury aesthetic</p>
+
+              <div className="bg-white rounded-lg shadow-md p-5 border-l-4 border-blue-500">
+                <h4 className="font-bold text-gray-800 mb-2">Common Area Focus</h4>
+                <p className="text-gray-700">
+                  Enhanced protection was provided in common areas and amenity spaces, with specialized systems for
+                  kitchens, gyms, and pool areas based on their specific risk profiles.
+                </p>
               </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-600 transform hover:scale-105 transition-transform">
-                <Droplets className="text-green-600 mb-4" size={36} />
-                <h3 className="text-xl font-bold text-gray-800 mb-3">Landscape Integration</h3>
-                <p className="text-gray-600">
-                  Fire hydrant and water supply systems integrated into the landscape design
+
+              <div className="bg-white rounded-lg shadow-md p-5 border-l-4 border-blue-500">
+                <h4 className="font-bold text-gray-800 mb-2">Resident Education</h4>
+                <p className="text-gray-700">
+                  We developed comprehensive resident education materials and conducted training sessions to ensure
+                  occupants understand emergency procedures and the operation of in-unit safety features.
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* Systems Implemented */}
-          <div className="mb-16 bg-green-50 p-10 rounded-2xl">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Systems Implemented</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                  <span className="bg-green-600 text-white p-2 rounded-full mr-3">1</span>
-                  Residential Fire Safety
-                </h3>
-                <ul className="space-y-4 pl-12">
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Addressable fire alarm systems in each residential unit</p>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Concealed sprinkler systems with designer covers</p>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Kitchen-specific fire suppression systems</p>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Smart smoke detectors with mobile alerts</p>
-                  </li>
-                </ul>
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-white">
+              <div className="flex items-center mb-4">
+                <Droplet className="w-8 h-8 mr-3" />
+                <h3 className="text-2xl font-bold">Water Supply Innovation</h3>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                  <span className="bg-green-600 text-white p-2 rounded-full mr-3">2</span>
-                  Community Infrastructure
-                </h3>
-                <ul className="space-y-4 pl-12">
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Strategically placed fire hydrants throughout the community</p>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Central monitoring station with 24/7 surveillance</p>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Emergency response system with direct connection to civil defense</p>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="text-green-600 mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-700">Backup water reservoirs and pump systems</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Project Gallery */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">Project Gallery</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="group relative overflow-hidden rounded-xl shadow-lg h-80">
-                <img
-                  src="/placeholder.svg?height=600&width=800&text=Jumeirah Heights Villa"
-                  alt="Jumeirah Heights Villa"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity flex items-end">
-                  <p className="text-white p-4 font-medium">Luxury Villa Fire Safety</p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl shadow-lg h-80">
-                <img
-                  src="/placeholder.svg?height=600&width=800&text=Control Room"
-                  alt="Control Room"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity flex items-end">
-                  <p className="text-white p-4 font-medium">Central Monitoring Station</p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl shadow-lg h-80">
-                <img
-                  src="/placeholder.svg?height=600&width=800&text=Landscape Hydrant"
-                  alt="Landscape Hydrant"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity flex items-end">
-                  <p className="text-white p-4 font-medium">Landscape-Integrated Fire Hydrant</p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl shadow-lg h-80">
-                <img
-                  src="/placeholder.svg?height=600&width=800&text=Concealed Sprinkler"
-                  alt="Concealed Sprinkler"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity flex items-end">
-                  <p className="text-white p-4 font-medium">Designer Concealed Sprinkler</p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl shadow-lg h-80">
-                <img
-                  src="/placeholder.svg?height=600&width=800&text=Smart Detection"
-                  alt="Smart Detection"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity flex items-end">
-                  <p className="text-white p-4 font-medium">Smart Home Fire Detection</p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden rounded-xl shadow-lg h-80">
-                <img
-                  src="/placeholder.svg?height=600&width=800&text=Community Overview"
-                  alt="Community Overview"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity flex items-end">
-                  <p className="text-white p-4 font-medium">Community-Wide Protection</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonial */}
-          <div className="mb-16 bg-gradient-to-r from-green-600 to-green-800 rounded-xl p-10 text-white">
-            <div className="max-w-4xl mx-auto text-center">
-              <svg className="w-12 h-12 mx-auto mb-4 text-white opacity-50" fill="currentColor" viewBox="0 0 32 32">
-                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-              </svg>
-              <p className="text-xl md:text-2xl italic mb-6">
-                "Eurofire's implementation at Jumeirah Heights has set a new standard for residential fire safety. Their
-                ability to integrate advanced systems while maintaining our luxury aesthetic was impressive. Residents
-                feel secure knowing they have cutting-edge protection that doesn't compromise on design."
+              <p className="mb-4">
+                A key challenge in this project was ensuring adequate water supply for fire protection while minimizing
+                the visual impact of infrastructure. Our solution included a concealed fire water storage system
+                integrated with the landscape design, and a state-of-the-art pump room with redundant systems to ensure
+                reliability.
               </p>
-              <div className="font-semibold">
-                <p className="text-lg">Property Director</p>
-                <p className="text-sm opacity-75">Jumeirah Properties</p>
-              </div>
+              <p>
+                The fire pump system was designed with variable speed technology to maintain optimal pressure while
+                minimizing energy consumption, aligning with the development's sustainability goals while providing
+                superior protection.
+              </p>
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center py-12 px-4 bg-gray-100 rounded-xl">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to enhance your property's fire safety?</h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-              Our team specializes in creating custom fire safety solutions for luxury residential communities.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-colors"
-            >
-              Request a Consultation
-            </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Eurofire</h2>
-            <p className="mb-6">Leading Fire Safety Solutions in the UAE</p>
-            <div className="flex justify-center space-x-6 mb-8">
-              <a href="#" className="hover:text-green-400 transition-colors">
-                Facebook
-              </a>
-              <a href="#" className="hover:text-green-400 transition-colors">
-                Twitter
-              </a>
-              <a href="#" className="hover:text-green-400 transition-colors">
-                LinkedIn
-              </a>
-              <a href="#" className="hover:text-green-400 transition-colors">
-                Instagram
-              </a>
-            </div>
-            <p className="text-gray-400 text-sm">© 2023 Eurofire. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
 
-export default JumeirahHeights;
+export default JumeirahHeights
 

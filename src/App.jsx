@@ -21,20 +21,20 @@ import FirePumpSystem from "./components/FirePumpSystem";
 import SprinklerSystem from "./components/SprinklerSystem";
 
 // Importing Our Work Subpages
-// import DubaiCricketStadium from "./routes/our-work/DubaiCricketStadium";
-// import OnyxTower from "./routes/our-work/OnyxTower";
+import DubaiCricketStadium from "./components/DubaiCricketStadium";
+import OnyxTower from "./components/OnyxTower";
 import PrismTower from "./components/PrismTower";
 import JumeirahHeights from "./components/JumeirahHeights";
-// import JumeirahGolfEstate from "./routes/our-work/JumeirahGolfEstate";
-// import AlAndalusTowers from "./routes/our-work/AlAndalusTowers";
-// import CrystalResidence from "./routes/our-work/CrystalResidence";
-// import AstoriaResidence from "./routes/our-work/AstoriaResidence";
-// import GrandeurResidence from "./routes/our-work/GrandeurResidence";
-// import LiwaHeights from "./routes/our-work/LiwaHeights";
-// import MajesticTower from "./routes/our-work/MajesticTower";
-// import MikanazPlaza from "./routes/our-work/MikanazPlaza";
-// import RegalTower from "./routes/our-work/RegalTower";
-// import SHotel from "./routes/our-work/SHotel";
+import JumeirahGolfEstate from "./components/JumeirahGolfEstate";
+import AlAndalusTowers from "./components/AlAndalusTowers";
+import CrystalResidence from "./components/CrystalResidence";
+import AstoriaResidence from "./components/AstoriaResidence";
+import GrandeurResidence from "./components/GrandeurResidence";
+import LiwaHeights from "./components/LiwaHeights";
+import MajesticTower from "./components/MajesticTower";
+import MikanazPlaza from "./components/MikanazPlaza";
+import RegalTower from "./components/RegalTower";
+import SHotel from "./components/SHotel";
 
 function App() {
   return (
@@ -61,20 +61,20 @@ function App() {
         <Route path="/sprinkler-system" element={<SprinklerSystem />} />
 
         {/* Our Work Subpage Routes  */}
-       {/* <Route path="/our-work/dubai-cricket-stadium" element={<DubaiCricketStadium />} />
-        <Route path="/our-work/onyx-tower" element={<OnyxTower />} /> */}
+        <Route path="/dubai-cricket-stadium" element={<DubaiCricketStadium />} />
+        <Route path="/onyx-tower" element={<OnyxTower />} />
         <Route path="/prism-tower" element={<PrismTower />} />
         <Route path="/jumeirah-heights" element={<JumeirahHeights />} />
-        {/* <Route path="/our-work/jumeirah-golf-estate" element={<JumeirahGolfEstate />} />
-        <Route path="/our-work/al-andalus-towers" element={<AlAndalusTowers />} />
-        <Route path="/our-work/crystal-residence" element={<CrystalResidence />} />
-        <Route path="/our-work/astoria-residence" element={<AstoriaResidence />} />
-        <Route path="/our-work/grandeur-residence" element={<GrandeurResidence />} />
-        <Route path="/our-work/liwa-heights" element={<LiwaHeights />} />
-        <Route path="/our-work/majestic-tower" element={<MajesticTower />} />
-        <Route path="/our-work/mikanaz-plaza" element={<MikanazPlaza />} />
-        <Route path="/our-work/regal-tower" element={<RegalTower />} />
-        <Route path="/our-work/s-hotel" element={<SHotel />} /> */}
+        <Route path="/jumeirah-golf-estate" element={<JumeirahGolfEstate />} />
+        <Route path="/al-andalus-towers" element={<AlAndalusTowers />} />
+        <Route path="/crystal-residence" element={<CrystalResidence />} />
+        <Route path="/astoria-residence" element={<AstoriaResidence />} />
+        <Route path="/grandeur-residence" element={<GrandeurResidence />} />
+        <Route path="/liwa-heights" element={<LiwaHeights />} />
+        <Route path="/majestic-tower" element={<MajesticTower />} />
+        <Route path="/mikanaz-plaza" element={<MikanazPlaza />} />
+        <Route path="/regal-tower" element={<RegalTower />} />
+        <Route path="/s-hotel" element={<SHotel />} />
       </Routes>
       <Footer />
     </div>

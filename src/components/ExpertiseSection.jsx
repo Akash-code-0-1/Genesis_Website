@@ -1,3 +1,6 @@
+import expo_icon from "../assets/images/exp_icon.png";
+import bullet_icon from "../assets/images/bullet.png"
+
 export default function ExpertiseSection() {
   return (
     <section className="py-16 px-4 md:px-6">
@@ -17,7 +20,7 @@ export default function ExpertiseSection() {
               className="rounded-lg h-full w-full object-cover border-[#DADADA] border-3 "
             />
             <div className="absolute bottom-10 left-7 md:left-1 xl:bottom-40 lg:left-30 xl:left-50 2xl:left-60 lg:right-[-15%]  bg-sky-400 text-black font-sm text-2xl px-15  py-5 rounded-2xl flex items-center gap-2 border-white border-2">
-              <img src="https://s3-alpha-sig.figma.com/img/8469/2889/de13a1f5cc80356d464d915c62c4bda8?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=sSIZ~IerBqiAum-nwWVP8DMIpt08-IEwtgwPr~vS6Kk9LF2IGjk5hr0op3shuPzUVm56m0FSgDgBLWlWfedZ0~Dc0Ce5SCX9uyx2H~lFIBtH4lNsD5MUsBEEmiw3Um2Hu5J~pJLpDAbLNouSNEdY-IlwbqofDEZXZSxCKAIMrqpqDSAA~3ElU9HaGNNzl6TJHf2Ah5HIqrX4z7euHaXVZ3e157sPBZVNu0uUi9lgC6DN0QHzi-iPWBrFgzc4xIrC7eJL5y0Hiu9lgsM1b~b9ahttzEwVCLJCVrB1R474tkjwCj~Al41CvNNJBOQ7qcPPWHoCsJzLWdOYaVXs3XmI0w__" alt="" className="size-8" />
+              <img src={expo_icon} alt="" className="size-8" />
               Our Groundings
             </div>
           </div>
@@ -43,7 +46,7 @@ export default function ExpertiseSection() {
                 "Commitment to enhancing public safety and quality of life.",
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <span className="text-sky-400 mt-1"><img src="https://s3-alpha-sig.figma.com/img/4d5d/94c6/5e3677c9d95fcccc099a50a3ca71775a?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OkETxGtbVCieJmVLYqS9Y2CNEOd-AtTJxFrK609ZL92LcfOUN8LEATWX3AZf91tgGbHw05JCRE3AYrRdd79A9pG0~c~285bwyJ3O7poraKDKZ~lp-qECikbFR6EALxHyAJ5d6LXKNoZx9TaVzN5xAVI1ChsCPAElKt2ssgAFB8VOJndIMJh5jAM7wZRs9U7hCM4Rdh3OqGD-hssDpmCEKjDPPXP4phd0a13Xi-SdXLP7a-cyt7x260jx9G2fn~fB5qyPXWDIgIIoVSBeNiXnnaJOQ91-e-SgPdvIgeb3XCzwy-~XYYJP7HtPGTf3RM750Jq4eHf8lSJOQJhInz75iw__" alt="" className="size-5" /></span>
+                  <span className="text-sky-400 mt-1"><img src={bullet_icon} alt="" className="size-5" /></span>
                   <span>{item}</span>
                 </li>
               ))}

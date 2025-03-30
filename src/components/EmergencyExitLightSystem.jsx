@@ -68,7 +68,7 @@ const EmergencyExitLightSystem = () => {
                 className="h-full w-full flex items-center justify-center"
               >
                 <img
-                  src="/placeholder.svg?height=400&width=800"
+                  src="https://www.kohler-ups.co.uk/wp-content/uploads/2016/11/Emergency-lighting-static-inverters.png"
                   alt="Office with emergency lighting"
                   className="w-full h-full object-cover opacity-70"
                 />
@@ -384,7 +384,7 @@ const EmergencyExitLightSystem = () => {
           >
             <div className="relative h-48 overflow-hidden">
               <img
-                src="/placeholder.svg?height=200&width=300"
+                src="https://correctbd.com/wp-content/uploads/2021/11/Fire-Exit-Sign-03.png"
                 alt="Emergency Exit Sign"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -417,7 +417,7 @@ const EmergencyExitLightSystem = () => {
           >
             <div className="relative h-48 overflow-hidden">
               <img
-                src="/placeholder.svg?height=200&width=300"
+                src="https://assets.cef.co.uk/images/pdg/firesafe_ertsledht-a/original/firesafe_ertsledht-a.jpg"
                 alt="Emergency Spotlights"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -450,7 +450,7 @@ const EmergencyExitLightSystem = () => {
           >
             <div className="relative h-48 overflow-hidden">
               <img
-                src="/placeholder.svg?height=200&width=300"
+                src="https://www.kasama.us/content/images/articles/floor-marking-path.jpg"
                 alt="Floor Path Marking"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -527,7 +527,7 @@ const EmergencyExitLightSystem = () => {
 
       {/* Features Section with Icons */}
       <motion.div
-        className="bg-gradient-to-r from-green-600 to-green-400 rounded-xl p-6 text-white mb-8"
+        className="bg-gradient-to-r from-green-600 to-green-400 rounded-xl p-6 text-black mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
@@ -540,7 +540,7 @@ const EmergencyExitLightSystem = () => {
               <LifeBuoy className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-semibold mb-2">Enhanced Safety</h3>
-            <p className="text-green-50">
+            <p className="text-black">
               Clear evacuation guidance even in smoke-filled environments, significantly improving chances of safe
               escape during emergencies.
             </p>
@@ -551,7 +551,7 @@ const EmergencyExitLightSystem = () => {
               <Users className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-semibold mb-2">Regulatory Compliance</h3>
-            <p className="text-green-50">
+            <p className="text-black">
               Meeting all UAE Civil Defense requirements and international safety standards, avoiding potential fines
               and liability issues.
             </p>
@@ -562,7 +562,7 @@ const EmergencyExitLightSystem = () => {
               <Info className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-semibold mb-2">Peace of Mind</h3>
-            <p className="text-green-50">
+            <p className="text-black">
               Reliable systems that automatically activate when needed, providing round-the-clock protection for
               building occupants.
             </p>
