@@ -195,17 +195,17 @@ const JumeirahHeights = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               <img
-                src="/placeholder.svg?height=300&width=200&text=Residential+Complex"
+                src="https://media.istockphoto.com/id/1165384568/photo/europe-modern-complex-of-residential-buildings.jpg?s=612x612&w=0&k=20&c=iW4NBiMPKEuvaA7h8wIsPHikhS64eR-5EVPfjQ9GPOA="
                 alt="Residential Complex"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Interior+Systems"
+                src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd6RVKb3piZ5uEwYKUCW75o-LY1usIidx4yI0Q_2I-V_oX7TIefBz2mfVumXdGZgHIR95Me4fe53zSEDbZwBSq9gXhkgc0RLIvxJy635P84AJqE0aWv13dtNiTADAExpyUbvOGoVwUOStooAZLK1oV8vRPP?key=6shcMHMAZMFUN4QnvloVAA"
                 alt="Interior Systems"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Control+Room"
+                src="https://www.powermag.com/wp-content/uploads/2019/01/figure-4-fom.jpg"
                 alt="Control Room"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />

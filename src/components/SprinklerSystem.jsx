@@ -214,7 +214,7 @@ const SprinklerSystem = () => {
                   </div>
                   <div className="md:w-1/2 bg-blue-100 flex items-center justify-center p-6">
                     <img
-                      src="/placeholder.svg?height=400&width=500"
+                      src="https://www.ny-engineers.com/hubfs/high%20hazard%20sprinkler%20systems.jpg"
                       alt="Sprinkler system in action"
                       className="rounded-lg shadow-md max-h-64 object-cover"
                     />

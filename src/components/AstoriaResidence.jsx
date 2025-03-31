@@ -107,7 +107,7 @@ const AstoriaResidence = () => {
             className="rounded-xl overflow-hidden shadow-2xl"
           >
             <img
-              src="/placeholder.svg?height=600&width=800"
+              src="https://psinv.net/assets/uploads/images/5CCA4F10-330E-4F6A-BCEA-440E1353155B/astoria-residence-n-a--1200x900.jpg"
               alt="Astoria Residence Building"
               className="w-full h-auto"
             />
@@ -211,7 +211,7 @@ const AstoriaResidence = () => {
               className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <img
-                src={`/placeholder.svg?height=400&width=600&text=Astoria ${item}`}
+                src={`https://www.waldorftowers.nyc/content/uploads/2023/09/017_Model_Apt_02_E2_7k_CMYK-1579475168.jpg ${item}`}
                 alt={`Astoria Residence Project Image ${item}`}
                 className="w-full h-64 object-cover"
               />
@@ -233,7 +233,7 @@ const AstoriaResidence = () => {
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              "Eurofire's implementation of fire safety systems at Astoria Residence exceeded our expectations. Their
+              "Genesis implementation of fire safety systems at Astoria Residence exceeded our expectations. Their
               team worked seamlessly with our architects to ensure that safety systems were integrated without
               compromising our design vision. The result is a building that offers both luxury and uncompromising safety
               for our residents."

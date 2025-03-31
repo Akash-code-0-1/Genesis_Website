@@ -176,17 +176,17 @@ const OnyxTower = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               <img
-                src="/placeholder.svg?height=300&width=200&text=Tower+Exterior"
+                src="https://media.istockphoto.com/id/157773003/photo/hearst-tower.jpg?s=612x612&w=0&k=20&c=OfEYhoA5xODbMOjA0cd0am26A0rK97oWGzQfB34SuJo="
                 alt="Tower Exterior"
                 className="rounded-lg shadow-md h-80 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Fire+Command+Center"
+                src="https://media.licdn.com/dms/image/v2/D4E22AQGF8E80da4kNA/feedshare-shrink_800/feedshare-shrink_800/0/1690904694649?e=2147483647&v=beta&t=Z9JjaqLjCoCDBYp6E7woJt3qNuOWAcVptw3q9O8VhJs"
                 alt="Fire Command Center"
                 className="rounded-lg shadow-md h-80 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Sprinkler+Systems"
+                src="https://www.radfiresprinklers.com/wp-content/uploads/2022/02/shutterstock_725657155-scaled.jpg"
                 alt="Sprinkler Systems"
                 className="rounded-lg shadow-md h-80 object-cover w-full"
               />

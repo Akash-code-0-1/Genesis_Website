@@ -815,7 +815,7 @@ const FireHydrantSystem = () => {
             whileHover={{ y: -5, boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.2)" }}
           >
             <img
-              src="/placeholder.svg?height=300&width=500"
+              src="https://bimsmithstorage.blob.core.windows.net/news-content/2020723_b_office-building-designs-architectures-ideas_office-decoration.jpg"
               alt="Commercial buildings"
               className="w-full h-48 object-cover"
             />
@@ -834,7 +834,7 @@ const FireHydrantSystem = () => {
             whileHover={{ y: -5, boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.2)" }}
           >
             <img
-              src="/placeholder.svg?height=300&width=500"
+              src="https://martinsystems.com/wp-content/uploads/2023/04/Manufacturing-Plant-h.webp"
               alt="Industrial facility"
               className="w-full h-48 object-cover"
             />
@@ -853,7 +853,7 @@ const FireHydrantSystem = () => {
             whileHover={{ y: -5, boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.2)" }}
           >
             <img
-              src="/placeholder.svg?height=300&width=500"
+              src="https://na.rdcpix.com/593877513/0c1ecaef39cc9d3af8fc88f5cf8b2a46w-c0xd-w928_q80.jpg"
               alt="Residential community"
               className="w-full h-48 object-cover"
             />

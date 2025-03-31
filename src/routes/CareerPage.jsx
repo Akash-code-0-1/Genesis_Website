@@ -370,7 +370,7 @@ const CareerPage = () => {
                                         </label>
                                     </div>
                                     <div className="mt-2 flex justify-center">
-                                        <img src="/placeholder.svg?height=40&width=40" alt="reCAPTCHA logo" className="h-10" />
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/ReCAPTCHA_icon.svg/220px-ReCAPTCHA_icon.svg.png" alt="reCAPTCHA logo" className="h-10" />
                                     </div>
                                 </div>
                             </div>

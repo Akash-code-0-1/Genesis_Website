@@ -503,7 +503,7 @@ const VoiceEvacuation = () => {
           <div className="border border-gray-200 rounded-lg overflow-hidden group">
             <div className="h-40 relative overflow-hidden">
               <img
-                src="/placeholder.svg?height=160&width=320"
+                src="https://img.freepik.com/free-photo/low-angle-shot-tall-city-building-with-blue-sky-background-new-york_181624-20345.jpg"
                 alt="High-rise building"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -522,7 +522,7 @@ const VoiceEvacuation = () => {
           <div className="border border-gray-200 rounded-lg overflow-hidden group">
             <div className="h-40 relative overflow-hidden">
               <img
-                src="/placeholder.svg?height=160&width=320"
+                src="https://images.squarespace-cdn.com/content/v1/591641675016e1ac9984f2db/1496422270787-N1AR8YOCDDAUCAESE2OL/image-asset.jpeg"
                 alt="Shopping mall"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -541,7 +541,7 @@ const VoiceEvacuation = () => {
           <div className="border border-gray-200 rounded-lg overflow-hidden group">
             <div className="h-40 relative overflow-hidden">
               <img
-                src="/placeholder.svg?height=160&width=320"
+                src="https://static.scientificamerican.com/sciam/cache/file/3A236506-E48D-4F38-B1A565180005173E_source.jpg?crop=16%3A9%2Csmart&w=1920"
                 alt="Hospital"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -560,7 +560,7 @@ const VoiceEvacuation = () => {
           <div className="border border-gray-200 rounded-lg overflow-hidden group">
             <div className="h-40 relative overflow-hidden">
               <img
-                src="/placeholder.svg?height=160&width=320"
+                src="https://www.intechnic.com/hubfs/Blog/Featured%20Images/Best%20Hotel%20Website%20Designs.jpg"
                 alt="Hotel"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />

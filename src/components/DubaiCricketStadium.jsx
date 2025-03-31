@@ -180,12 +180,12 @@ const DubaiCricketStadium = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <img
-                src="/placeholder.svg?height=300&width=400&text=Stadium+Interior"
+                src="https://media01.stockfood.com/largepreviews/MjE3MTI1NjQ5Mg==/70040532-Interior-view-of-the-football-stadium-Allianz-Arena-Munich-Bavaria-Germany.jpg"
                 alt="Stadium Interior"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=400&text=Fire+Safety+Systems"
+                src="https://innovation-vent.co/wp-content/uploads/Innovation-Vent-fire-system-technology.webp"
                 alt="Fire Safety Systems"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />

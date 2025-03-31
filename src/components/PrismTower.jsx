@@ -182,12 +182,12 @@ const PrismTower = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <img
-                src="/placeholder.svg?height=300&width=400&text=Prism+Tower+Exterior"
+                src="https://aplusidesign.com/wp-content/uploads/2023/07/Prism-Exterior-and-Interior-13th-Oct-2021-9-scaled.jpg"
                 alt="Prism Tower Exterior"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=400&text=Smart+Fire+Systems"
+                src="https://velox.ae/wp-content/uploads/2020/10/VELOX-Smart-detction-webinar-02_600x600_acf_cropped.jpg"
                 alt="Smart Fire Systems"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />

@@ -44,7 +44,31 @@ const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
 
+  // Helper function to determine if a path is active
+  const isServicePage = location.pathname.includes("/fire-") ||
+    location.pathname.includes("/emergency-") ||
+    location.pathname.includes("/central-") ||
+    location.pathname.includes("/voice-") ||
+    location.pathname.includes("/kitchen-") ||
+    location.pathname.includes("/aerosol-") ||
+    location.pathname.includes("/fm-200") ||
+    location.pathname.includes("/sprinkler-") ||
+    location.pathname.includes("/fire-hydrant") ||
+    location.pathname.includes("/fire-pump");
 
+  const isWorkPage = location.pathname.includes("/dubai-") ||
+    location.pathname.includes("/onyx-") ||
+    location.pathname.includes("/prism-") ||
+    location.pathname.includes("/jumeirah-") ||
+    location.pathname.includes("/al-andalus-") ||
+    location.pathname.includes("/crystal-") ||
+    location.pathname.includes("/astoria-") ||
+    location.pathname.includes("/grandeur-") ||
+    location.pathname.includes("/liwa-") ||
+    location.pathname.includes("/majestic-") ||
+    location.pathname.includes("/mikanaz-") ||
+    location.pathname.includes("/regal-") ||
+    location.pathname.includes("/s-hotel");
 
   return (
     <>
@@ -54,7 +78,7 @@ const Navbar = () => {
           <div className="w-full flex justify-between xl:justify-center items-center h-[82px] px-10 gap-32">
             <div className="flex justify-center items-center mt-2">
               <div className="logo_container h-full w-[150px]">
-                <img src={genesis_logo} alt="Genesis Logo" className="h-full w-full object-contain" />
+                <img src={genesis_logo || "/placeholder.svg"} alt="Genesis Logo" className="h-full w-full object-contain" />
               </div>
             </div>
 
@@ -76,7 +100,14 @@ const Navbar = () => {
               <ul className="flex pl-10 text-[18px] font-medium font-poppins xl:gap-8 2xl:gap-8">
                 {["Home", "About", "Services", "Our Work", "News", "Career"].map((item) => {
                   const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
-                  const isActive = location.pathname === path || (item === "Home" && location.pathname === "/");
+
+                  const isActive =
+                    (item === "Home" && location.pathname === "/") ||
+                    (item === "About" && location.pathname === "/about") ||
+                    (item === "Services" && isServicePage) ||
+                    (item === "Our Work" && isWorkPage) ||
+                    (item === "News" && location.pathname === "/news") ||
+                    (item === "Career" && location.pathname === "/career");
 
                   return (
                     <li
@@ -135,7 +166,10 @@ const Navbar = () => {
                             { name: "Sprinkler System", path: "/sprinkler-system" },
                           ].map((service, index) => (
                             <li key={index} className="py-2 px-4 flex items-center cursor-pointer group">
-                              <Link to={service.path} className="w-full">
+                              <Link
+                                to={service.path}
+                                className={`w-full ${location.pathname === service.path ? "text-blue-500 font-semibold" : ""}`}
+                              >
                                 <span className="text-blue-500 hidden mr-2 group-hover:inline-block opacity-0 group-hover:opacity-100 transition-all duration-300">
                                   ➜
                                 </span>
@@ -165,7 +199,10 @@ const Navbar = () => {
                             { name: "SHotel", path: "/s-hotel" },
                           ].map((project, index) => (
                             <li key={index} className="py-2 px-4 flex items-center group cursor-pointer">
-                              <Link to={project.path} className="w-full">
+                              <Link
+                                to={project.path}
+                                className={`w-full ${location.pathname === project.path ? "text-blue-500 font-semibold" : ""}`}
+                              >
                                 {project.name}
                               </Link>
                             </li>
@@ -204,15 +241,15 @@ const Navbar = () => {
           >
             {/* Sidebar Menu */}
             <ul className="flex flex-col text-[16px] font-medium">
-              <li className="py-4 text-blue-500 font-semibold border-b-[1px] border-gray-200">
+              <li className={`py-4 ${location.pathname === "/" ? "text-blue-500 font-semibold" : "text-black"} border-b-[1px] border-gray-200`}>
                 <Link to="/">Home</Link>
               </li>
-              <li className="py-4 text-black border-b-[1px] border-gray-200">
+              <li className={`py-4 ${location.pathname === "/about" ? "text-blue-500 font-semibold" : "text-black"} border-b-[1px] border-gray-200`}>
                 <Link to="/about">About</Link>
               </li>
 
               {/* Services with dropdown */}
-              <li className="py-4 text-black flex justify-between items-center border-b-[1px] border-gray-200 cursor-pointer"
+              <li className={`py-4 ${isServicePage ? "text-blue-500 font-semibold" : "text-black"} flex justify-between items-center border-b-[1px] border-gray-200 cursor-pointer`}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}>
                 Services
                 <span>
@@ -236,18 +273,23 @@ const Navbar = () => {
                     { name: "Sprinkler System", path: "/sprinkler-system" }
                   ].map((service, index) => (
                     <li key={index} className="py-2 px-4 hover:bg-gray-100">
-                      <Link to={service.path}>{service.name}</Link>
+                      <Link
+                        to={service.path}
+                        className={`${location.pathname === service.path ? "text-blue-500 font-semibold" : ""}`}
+                      >
+                        {service.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               )}
 
-              <li className="py-4 text-black border-b-[1px] border-gray-200">
+              <li className={`py-4 ${location.pathname === "/certificate" ? "text-blue-500 font-semibold" : "text-black"} border-b-[1px] border-gray-200`}>
                 <Link to="/certificate">Certificate</Link>
               </li>
 
               {/* Projects with dropdown */}
-              <li className="py-4 text-black flex justify-between items-center border-b-[1px] border-gray-200 cursor-pointer"
+              <li className={`py-4 ${isWorkPage ? "text-blue-500 font-semibold" : "text-black"} flex justify-between items-center border-b-[1px] border-gray-200 cursor-pointer`}
                 onClick={() => setIsProjectsOpen(!isProjectsOpen)}>
                 Our Work
                 <span>
@@ -273,16 +315,21 @@ const Navbar = () => {
                     { name: "SHotel", path: "/s-hotel" }
                   ].map((project, index) => (
                     <li key={index} className="py-2 px-4 hover:bg-gray-100">
-                      <Link to={project.path}>{project.name}</Link>
+                      <Link
+                        to={project.path}
+                        className={`${location.pathname === project.path ? "text-blue-500 font-semibold" : ""}`}
+                      >
+                        {project.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
               )}
 
-              <li className="py-4 text-black border-b-[1px] border-gray-200">
+              <li className={`py-4 ${location.pathname === "/news" ? "text-blue-500 font-semibold" : "text-black"} border-b-[1px] border-gray-200`}>
                 <Link to="/news">News</Link>
               </li>
-              <li className="py-4 text-black border-b-[1px] border-gray-200">
+              <li className={`py-4 ${location.pathname === "/career" ? "text-blue-500 font-semibold" : "text-black"} border-b-[1px] border-gray-200`}>
                 <Link to="/career">Careers</Link>
               </li>
             </ul>
@@ -308,7 +355,7 @@ const Navbar = () => {
       <nav ref={mainNavRef} className="flex items-center justify-between w-full xl:h-[200px] bg-white relative main_nav">
         <div className="flex xl:items-center items-start pl-10 xl:pl-30 p-3 2xl:pl-42 w-1/2">
           <div className="logo_container w-[150px] h-[55px] xl:w-[300px] xl:h-[200px]">
-            <img src={genesis_logo} alt="Genesis Logo" className="h-full w-full object-contain" />
+            <img src={genesis_logo || "/placeholder.svg"} alt="Genesis Logo" className="h-full w-full object-contain" />
           </div>
         </div>
 
@@ -316,7 +363,7 @@ const Navbar = () => {
           <div className="info_container w-full h-[150px] flex flex-row justify-start ">
             <div className="info h-full w-[300px]  flex flex-row items-center gap-4">
               <div className="icon">
-                <img src={telephone} alt="Telephone Icon" className="h-[35px] w-[35px]" />
+                <img src={telephone || "/placeholder.svg"} alt="Telephone Icon" className="h-[35px] w-[35px]" />
               </div>
               <div className="text text-[15px]">
                 <span className="font-bold font-poppins">Call Us</span>
@@ -327,7 +374,7 @@ const Navbar = () => {
 
             <div className="info h-full w-[300px] flex flex-row items-center gap-4">
               <div className="icon">
-                <img src={email} alt="Email Icon" className="h-[35px] w-[35px]" />
+                <img src={email || "/placeholder.svg"} alt="Email Icon" className="h-[35px] w-[35px]" />
               </div>
               <div className="text text-[15px] font-poppins">
                 <span className="font-bold font-poppins">Drop Us an Email</span>
@@ -351,7 +398,14 @@ const Navbar = () => {
           <ul className="flex pl-10 text-[18px] font-medium font-poppins xl:gap-8 2xl:gap-8">
             {["Home", "About", "Services", "Our Work", "News", "Career"].map((item) => {
               const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
-              const isActive = location.pathname === path || (item === "Home" && location.pathname === "/");
+
+              const isActive =
+                (item === "Home" && location.pathname === "/") ||
+                (item === "About" && location.pathname === "/about") ||
+                (item === "Services" && isServicePage) ||
+                (item === "Our Work" && isWorkPage) ||
+                (item === "News" && location.pathname === "/news") ||
+                (item === "Career" && location.pathname === "/career");
 
               return (
                 <li
@@ -410,7 +464,10 @@ const Navbar = () => {
                         { name: "Sprinkler System", path: "/sprinkler-system" },
                       ].map((service, index) => (
                         <li key={index} className="py-2 px-4 flex items-center cursor-pointer group">
-                          <Link to={service.path} className="w-full">
+                          <Link
+                            to={service.path}
+                            className={`w-full ${location.pathname === service.path ? "text-blue-500 font-semibold" : ""}`}
+                          >
                             <span className="text-blue-500 hidden mr-2 group-hover:inline-block opacity-0 group-hover:opacity-100 transition-all duration-300">
                               ➜
                             </span>
@@ -440,7 +497,10 @@ const Navbar = () => {
                         { name: "SHotel", path: "/s-hotel" },
                       ].map((project, index) => (
                         <li key={index} className="py-2 px-4 flex items-center group cursor-pointer">
-                          <Link to={project.path} className="w-full">
+                          <Link
+                            to={project.path}
+                            className={`w-full ${location.pathname === project.path ? "text-blue-500 font-semibold" : ""}`}
+                          >
                             {project.name}
                           </Link>
                         </li>

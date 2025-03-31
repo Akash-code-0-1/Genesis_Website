@@ -182,17 +182,17 @@ const CrystalResidence = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               <img
-                src="/placeholder.svg?height=300&width=200&text=Luxury+Interior"
+                src="https://modusfireplaces.com/wp-content/uploads/2017/11/news-46.jpeg"
                 alt="Luxury Interior"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Concealed+Systems"
+                src="https://en.sanitaer-schwab.com/media/d7/c8/e6/1669896101/1_Concealed_systems.webp"
                 alt="Concealed Systems"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Smart+Integration"
+                src="https://eyedro.com/wp-content/uploads/2021/07/smart-home-integration-800x497-1.png"
                 alt="Smart Integration"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import {
   Calendar,
@@ -42,13 +42,13 @@ const NewsPage = () => {
     category: "technology",
     date: "August 15, 2023",
     readTime: "5 min read",
-    image: "/placeholder.svg?height=600&width=1200",
+    image: "https://5.imimg.com/data5/YP/OW/MY-3670754/advanced-fire-detation-system.jpg",
     excerpt:
       "Genesis has unveiled its latest fire detection technology that uses AI to predict potential fire hazards before they occur, revolutionizing the fire safety industry.",
     content:
       'Genesis has unveiled its latest fire detection technology that uses artificial intelligence to predict potential fire hazards before they occur, revolutionizing the fire safety industry. The new system, called FirePredict AI, combines thermal imaging, smoke particle analysis, and machine learning algorithms to detect abnormal heat patterns and environmental changes that could lead to fires.\n\nDuring the product launch event, Genesis CEO demonstrated how the system can identify risk factors up to 30 minutes before a traditional fire alarm would be triggered, giving building occupants and emergency services crucial extra time to respond.\n\n"This technology represents a paradigm shift in how we approach fire safety," said the CEO. "Instead of simply reacting to fires, we can now prevent them from happening in the first place."\n\nThe FirePredict AI system has already been installed in several high-profile commercial buildings across the UAE, with plans for residential applications in the coming year. Initial data shows a 78% reduction in false alarms and a significant improvement in early detection rates compared to conventional systems.\n\nIndustry experts have praised the innovation, with the International Fire Safety Association calling it "one of the most significant advancements in fire protection technology in the past decade."',
     author: "Sarah Johnson",
-    authorImage: "/placeholder.svg?height=100&width=100",
+    authorImage: "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     comments: 24,
     views: 1256,
   }
@@ -61,13 +61,13 @@ const NewsPage = () => {
       category: "safety",
       date: "July 28, 2023",
       readTime: "4 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://www.fldata.com/wp-content/uploads/2022/02/Workplace-Fire-Safety-Tips-2-768x768.png",
       excerpt:
         "Ensure your workplace is protected with these critical fire safety measures that every office building should implement.",
       content:
         "Fire safety in office buildings is not just about compliance—it's about protecting lives and assets. Here are five essential tips that every office building should implement:\n\n1. Regular Fire Drill Practice: Schedule fire drills at least quarterly to ensure all employees know evacuation routes and assembly points. Document these drills and address any issues that arise.\n\n2. Proper Fire Extinguisher Placement: Fire extinguishers should be placed every 75 feet in accessible locations. Ensure they're regularly inspected and staff are trained on how to use them correctly.\n\n3. Clear Emergency Exits: All emergency exits must remain unobstructed at all times. Exit signs should be illuminated and visible from all areas.\n\n4. Updated Fire Detection Systems: Modern fire detection systems can detect smoke, heat, and carbon monoxide. Ensure your system is regularly maintained and tested.\n\n5. Designated Fire Wardens: Appoint and train fire wardens for each area of your building who can lead evacuation efforts and perform headcounts at assembly points.\n\nImplementing these measures not only helps comply with regulations but creates a safer environment for everyone in the building.",
       author: "Michael Chen",
-      authorImage: "/placeholder.svg?height=100&width=100",
+      authorImage: "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       comments: 18,
       views: 842,
     },
@@ -77,7 +77,7 @@ const NewsPage = () => {
       category: "company",
       date: "July 15, 2023",
       readTime: "3 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://i.pinimg.com/736x/fe/f2/d9/fef2d902aaecfc1e6d5241a50482ea4c.jpg",
       excerpt:
         "Our company has been recognized for outstanding commitment to safety standards and innovative fire protection solutions.",
       content:
@@ -93,7 +93,7 @@ const NewsPage = () => {
       category: "industry",
       date: "June 30, 2023",
       readTime: "6 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://humanfocus.co.uk/wp-content/uploads/new-fire-safety-regulations.png",
       excerpt:
         "Upcoming changes to UAE fire safety codes will impact building design, materials, and inspection requirements starting next year.",
       content:
@@ -109,7 +109,7 @@ const NewsPage = () => {
       category: "events",
       date: "June 15, 2023",
       readTime: "2 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://apfmag.com/wp-content/uploads/2024/02/NFPA_23CE_D855562-1-scaled.jpg",
       excerpt:
         "Join us for the region's premier fire safety event featuring expert speakers, product demonstrations, and networking opportunities.",
       content:
@@ -125,7 +125,7 @@ const NewsPage = () => {
       category: "technology",
       date: "May 25, 2023",
       readTime: "7 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://cdn.ai-forall.com/ifa_dev_media/How_the_Internet_of_Things_is_Changing_Fire_Safety_1_610823f32a.jpg",
       excerpt:
         "Smart, connected fire safety systems are providing unprecedented levels of protection and data-driven insights for building managers.",
       content:
@@ -141,7 +141,7 @@ const NewsPage = () => {
       category: "company",
       date: "May 10, 2023",
       readTime: "4 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://www.sknis.gov.kn/wp-content/uploads/2018/03/A54BEBD9-484F-4DF9-A1D3-2C2158F723D7.jpeg",
       excerpt:
         "Our team has successfully implemented a comprehensive fire safety overhaul at one of the region's busiest international airports.",
       content:
@@ -157,7 +157,7 @@ const NewsPage = () => {
       category: "safety",
       date: "April 22, 2023",
       readTime: "5 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://doortek.ca/wp-content/uploads/2021/03/Interior-Doors-Commercial-Residential.jpg",
       excerpt:
         "Learn about the different fire rating classifications for commercial doors and why they're crucial for building safety compliance.",
       content:
@@ -173,7 +173,7 @@ const NewsPage = () => {
       category: "company",
       date: "April 5, 2023",
       readTime: "3 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST2Ec_uWqn5xKw65LNBmcDSMrESjg-7W9wFA&s",
       excerpt:
         "Our new community initiative brings interactive fire safety training to elementary schools across Dubai and Abu Dhabi.",
       content:
@@ -189,7 +189,7 @@ const NewsPage = () => {
       category: "technology",
       date: "March 20, 2023",
       readTime: "8 min read",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://flameprotect.in/assets/uploads/news-8.png",
       excerpt:
         "From water sprinklers to clean agents and water mist systems, fire suppression technology has advanced dramatically in recent decades.",
       content:

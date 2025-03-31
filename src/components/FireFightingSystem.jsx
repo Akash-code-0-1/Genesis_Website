@@ -315,7 +315,7 @@ const FireFightingSystem = () => {
             </motion.button>
           </div>
           <div className="hidden md:block">
-            <img src="/placeholder.svg?height=300&width=400" alt="Fire Training" className="rounded-lg shadow-lg" />
+            <img src="https://safetysourcefire.ca/wp-content/uploads/2021/04/170719FVEF8137.jpg" alt="Fire Training" className="rounded-lg shadow-lg" />
           </div>
         </div>
       </motion.div>

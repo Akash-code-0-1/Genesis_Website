@@ -184,17 +184,17 @@ const AlAndalusTowers = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
               <img
-                src="/placeholder.svg?height=300&width=200&text=Towers+Exterior"
+                src="https://images.adsttc.com/media/images/633a/c729/4dba/6e15/cfb1/1b8a/newsletter/mika-twin-towers-alidoost-and-partners_1.jpg?1664796472"
                 alt="Towers Exterior"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Fire+Command+Center"
+                src="https://media.licdn.com/dms/image/v2/C5622AQGiJTk2I3rv2g/feedshare-shrink_800/feedshare-shrink_800/0/1661986946810?e=2147483647&v=beta&t=kamSNgVw9MWisbpkb-p2GQMiLXDgAOdOGQhKP9b9bHo"
                 alt="Fire Command Center"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />
               <img
-                src="/placeholder.svg?height=300&width=200&text=Sprinkler+Installation"
+                src="https://accuro.at/files/loesungen/sprinklerloeschanlagen/Sprinklerzentrale-Verteiler.jpg"
                 alt="Sprinkler Installation"
                 className="rounded-lg shadow-md h-64 object-cover w-full"
               />

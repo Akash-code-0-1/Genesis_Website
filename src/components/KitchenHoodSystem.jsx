@@ -442,54 +442,54 @@ const KitchenHoodSystem = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-5 border border-white border-opacity-20">
-                        <h3 className="text-xl font-semibold mb-3">Restaurants</h3>
-                        <p className="text-orange-100 mb-4">
+                        <h3 className="text-xl font-semibold mb-3m text-orange-500">Restaurants</h3>
+                        <p className="text-orange-400 mb-4">
                             From fast food to fine dining, all commercial kitchens with cooking equipment that produces grease-laden
                             vapors require proper fire suppression systems.
                         </p>
                         <ul className="space-y-2">
                             <li className="flex items-center">
-                                <CheckCircle className="w-5 h-5 mr-2 text-orange-100" />
-                                <span>Cooking lines with fryers, grills, and ranges</span>
+                                <CheckCircle className="w-5 h-5 mr-2 text-orange-400" />
+                                <span className="text-orange-400">Cooking lines with fryers, grills, and ranges</span>
                             </li>
                             <li className="flex items-center">
-                                <CheckCircle className="w-5 h-5 mr-2 text-orange-100" />
-                                <span>Wok stations and charbroilers</span>
+                                <CheckCircle className="w-5 h-5 mr-2 text-orange-400" />
+                                <span className="text-orange-400">Wok stations and charbroilers</span>
                             </li>
                         </ul>
                     </div>
 
                     <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-5 border border-white border-opacity-20">
-                        <h3 className="text-xl font-semibold mb-3">Institutional Kitchens</h3>
-                        <p className="text-orange-100 mb-4">
+                        <h3 className="text-xl font-semibold mb-3 text-orange-500">Institutional Kitchens</h3>
+                        <p className="text-orange-400 mb-4">
                             Large-scale food preparation facilities serving schools, hospitals, corporate cafeterias, and other
                             institutions.
                         </p>
                         <ul className="space-y-2">
                             <li className="flex items-center">
-                                <CheckCircle className="w-5 h-5 mr-2 text-orange-100" />
-                                <span>High-volume cooking equipment</span>
+                                <CheckCircle className="w-5 h-5 mr-2 text-orange-400" />
+                                <span className="text-orange-400">High-volume cooking equipment</span>
                             </li>
                             <li className="flex items-center">
-                                <CheckCircle className="w-5 h-5 mr-2 text-orange-100" />
-                                <span>Multiple cooking lines and stations</span>
+                                <CheckCircle className="w-5 h-5 mr-2 text-orange-400" />
+                                <span className="text-orange-400">Multiple cooking lines and stations</span>
                             </li>
                         </ul>
                     </div>
 
                     <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-5 border border-white border-opacity-20">
-                        <h3 className="text-xl font-semibold mb-3">Food Service Venues</h3>
-                        <p className="text-orange-100 mb-4">
+                        <h3 className="text-xl font-semibold mb-3 text-orange-500">Food Service Venues</h3>
+                        <p className="text-orange-400 mb-4">
                             Any location where commercial cooking takes place, including food courts, stadiums, and event centers.
                         </p>
                         <ul className="space-y-2">
                             <li className="flex items-center">
-                                <CheckCircle className="w-5 h-5 mr-2 text-orange-100" />
-                                <span>Concession stands and food kiosks</span>
+                                <CheckCircle className="w-5 h-5 mr-2 text-orange-400" />
+                                <span className="text-orange-400">Concession stands and food kiosks</span>
                             </li>
                             <li className="flex items-center">
-                                <CheckCircle className="w-5 h-5 mr-2 text-orange-100" />
-                                <span>Mobile food preparation units</span>
+                                <CheckCircle className="w-5 h-5 mr-2 text-orange-400" />
+                                <span className="text-orange-400">Mobile food preparation units</span>
                             </li>
                         </ul>
                     </div>
