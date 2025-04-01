@@ -1,5 +1,7 @@
 # GENESIS
 
+**Live Link:** [Genesis](https://akashgenesisweb.netlify.app/)
+
 ## 🌐 Overview
 Genesis is an One Stop Solution Provider for Fire Safety & Security Solution.
 GENESIS is a modern, Fully Responsive frontend web application built with **React.js,Tailwind CSS, and JavaScript** and **Vite.js**. It provides an interactive user experience with structured components and routing for seamless navigation. 
