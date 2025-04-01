@@ -7,15 +7,19 @@ GENESIS is a modern, Fully Responsive frontend web application built with **Reac
 ## 📸 Screenshots  
 
 ![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/1.PNG?raw=true)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/2.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/3.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/4.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/5.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/6.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/7.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/8.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/9.PNG)
-![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/10.PNG)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/2.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/3.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/4.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/5.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/6.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/7.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/8.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/9.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/10.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/11.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/12.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/13.PNG?raw=true)
+
 
 ## 📂 Project Structure
 ```
