@@ -68,7 +68,7 @@ const GrandeurResidence = () => {
           </div>
           <div className="rounded-xl overflow-hidden shadow-2xl">
             <img
-              src="/placeholder.svg?height=600&width=800"
+              src="https://icl-blog.s3.ap-southeast-1.amazonaws.com/uploads/2018/02/Fountain_Cove-600.jpg"
               alt="Grandeur Residence Building"
               className="w-full h-auto"
             />
@@ -183,7 +183,7 @@ const GrandeurResidence = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
-                src="/placeholder.svg?height=500&width=700"
+                src="https://icl-blog.s3.ap-southeast-1.amazonaws.com/uploads/2018/02/Fountain_Cove-600.jpg"
                 alt="Grandeur Residence Results"
                 className="w-full h-auto"
               />
@@ -340,7 +340,7 @@ const GrandeurResidence = () => {
                 src={`/placeholder.svg?height=${index === 0 ? 600 : 400}&width=${index === 0 ? 800 : 600}&text=Grandeur ${item}`}
                 alt={`Grandeur Residence Project Image ${item}`}
                 className={`w-full ${index === 0 ? "h-full" : "h-64"} object-cover`}
-              />
+              /> 
             </motion.div>
           ))}
         </div>

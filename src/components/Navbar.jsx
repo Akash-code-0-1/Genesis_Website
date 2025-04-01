@@ -44,6 +44,7 @@ const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
 
+
   // Helper function to determine if a path is active
   const isServicePage = location.pathname.includes("/fire-") ||
     location.pathname.includes("/emergency-") ||
@@ -150,7 +151,9 @@ const Navbar = () => {
 
                       {/* Dropdown for Services */}
                       {item === "Services" && isServicesOpen && (
-                        <ul className="absolute left-0 top-full mt-5 bg-white shadow-md rounded-lg w-[500px] p-4">
+                        <ul className="absolute left-0 top-full mt-5 bg-white shadow-md rounded-lg w-[500px] p-4"
+
+                        >
                           {[
                             { name: "Fire Alarm System", path: "/fire-alarm-system" },
                             { name: "Fire Fighting System", path: "/fire-fighting-system" },
@@ -468,7 +471,7 @@ const Navbar = () => {
                             to={service.path}
                             className={`w-full ${location.pathname === service.path ? "text-blue-500 font-semibold" : ""}`}
                           >
-                            <span className="text-blue-500 hidden mr-2 group-hover:inline-block opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <span className="text-blue-500 hidden mr-2 group-hover:inline-block opacity-0 group-hover:opacity-100 transition-all duration-1000">
                               ➜
                             </span>
                             {service.name}

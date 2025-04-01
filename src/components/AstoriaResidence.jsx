@@ -211,7 +211,7 @@ const AstoriaResidence = () => {
               className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <img
-                src={`https://www.waldorftowers.nyc/content/uploads/2023/09/017_Model_Apt_02_E2_7k_CMYK-1579475168.jpg ${item}`}
+                src="https://www.waldorftowers.nyc/content/uploads/2023/09/017_Model_Apt_02_E2_7k_CMYK-1579475168.jpg"
                 alt={`Astoria Residence Project Image ${item}`}
                 className="w-full h-64 object-cover"
               />
