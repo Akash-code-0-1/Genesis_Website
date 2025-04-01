@@ -60,7 +60,7 @@ const AboutGenesis = () => {
                             {/* Fire, Safety, and Security Icons */}
                             <div className="relative flex flex-col items-center justify-center right-5">
                                 {/* Top - Fire */}
-                                <div className="flex flex-col items-center absolute top-[-75%] p-6 bg-gradient-to-b from-[#D9D9D9] to-[#aeaeae] border-[#C6C6C6] shadow-lg rounded-2xl z-100 border-1 ">
+                                <div className="flex flex-col items-center absolute top-[-75%] p-6 bg-gradient-to-b from-[#D9D9D9] to-[#aeaeae] border-[#C6C6C6] shadow-lg rounded-2xl  border-1 ">
                                     <img src={fireImage} alt="" className="size-15 object-cover" />
                                     <span className="font-semibold mt-2">Fire</span>
                                 </div>
