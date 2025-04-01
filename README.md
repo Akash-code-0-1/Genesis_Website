@@ -4,6 +4,19 @@
 Genesis is an One Stop Solution Provider for Fire Safety & Security Solution.
 GENESIS is a modern, Fully Responsive frontend web application built with **React.js,Tailwind CSS, and JavaScript** and **Vite.js**. It provides an interactive user experience with structured components and routing for seamless navigation. 
 
+## 📸 Screenshots  
+
+![](https://github.com/Akash-code-0-1/Genesis_Website/blob/main/src/assets/Web_ss/1.PNG?raw=true)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/2.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/3.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/4.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/5.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/6.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/7.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/8.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/9.PNG)
+![](https://github.com/Akash-code-0-1/chef_institute/blob/d0301182e803879626c6296ef4665907a595125d/10.PNG)
+
 ## 📂 Project Structure
 ```
 GENESIS_4/
