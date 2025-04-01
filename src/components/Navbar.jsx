@@ -287,9 +287,9 @@ const Navbar = () => {
                 </ul>
               )}
 
-              <li className={`py-4 ${location.pathname === "/certificate" ? "text-blue-500 font-semibold" : "text-black"} border-b-[1px] border-gray-200`}>
+              {/* <li className={`py-4 ${location.pathname === "/certificate" ? "text-blue-500 font-semibold" : "text-black"} border-b-[1px] border-gray-200`}>
                 <Link to="/certificate">Certificate</Link>
-              </li>
+              </li> */}
 
               {/* Projects with dropdown */}
               <li className={`py-4 ${isWorkPage ? "text-blue-500 font-semibold" : "text-black"} flex justify-between items-center border-b-[1px] border-gray-200 cursor-pointer`}
